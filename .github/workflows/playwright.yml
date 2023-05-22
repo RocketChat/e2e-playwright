@@ -22,7 +22,7 @@ jobs:
         touch .env
         echo CANDIDATE_EE="https://candidate.rocket.chat/home" >> .env
         echo USER_ADMIN="automationCandidate" >> .env
-        echo PASSWORD_ADMIN="${{secrets.PASSWORD_ADMIN}}" >> .env
+        echo PASSWORD_ADMIN=${{secrets.PASSWORD_ADMIN}} >> .env
     - name: Run Playwright tests
       run: yarn playwright test
     - uses: actions/upload-artifact@v3

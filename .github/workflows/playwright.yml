@@ -17,6 +17,12 @@ jobs:
       run: yarn
     - name: Install Playwright Browsers
       run: yarn playwright install --with-deps
+    - name: Create env file
+      run: |
+        touch .env
+        echo CANDIDATE_EE="https://candidate.rocket.chat/home" >> .env
+        echo USER_ADMIN="automationCandidate" >> .env
+        echo PASSWORD_ADMIN="${{secrets.PASSWORD_ADMIN}}" >> .env
     - name: Run Playwright tests
       run: yarn playwright test
     - uses: actions/upload-artifact@v3

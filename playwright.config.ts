@@ -1,44 +1,86 @@
 import { defineConfig, devices } from '@playwright/test';
 
-/**
- * Read environment variables from file.
- * https://github.com/motdotla/dotenv
- */
-// require('dotenv').config();
-
-/**
- * See https://playwright.dev/docs/test-configuration.
- */
 require('dotenv').config();
 
 export default defineConfig({
   reporter: [
-    ['list'],
     [
       'monocart-reporter',
       {
         name: 'My Test Report',
         outputFile: './test-results/report.html',
+        visitor: (data, metadata, collect) => {
+          const parserOptions = {
+            sourceType: 'module',
+            plugins: ['typescript'],
+          };
+          const comments = collect.comments(parserOptions);
+          if (comments) {
+            Object.assign(data, comments);
+          }
+        },
+        traceViewerUrl: 'https://trace.playwright.dev/?trace={traceUrl}',
+        tags: {
+          smoke: {
+            style: {
+              background: '#6F9913',
+            },
+            description:
+              '"Smoke Testing" is a software testing technique performed post software build to verify that the <critical functionalities> of software are working fine.',
+          },
+          sanity: {
+            style: 'background:#178F43;',
+            description:
+              '"Sanity testing" is a kind of Software Testing performed after receiving a software build, with minor changes in code, or functionality, to ascertain that the bugs have been fixed and no further issues are introduced due to these changes.',
+          },
+          critical: {
+            background: '#c00',
+          },
+          slow: 'background:orange;',
+        },
+        // custom columns
+        columns: (defaultColumns) => {
+          const locationColumn = defaultColumns.find(
+            (column) => column.id === 'location'
+          );
+          locationColumn.searchable = true;
+          // insert custom column(s) before a default column
+          const index = defaultColumns.findIndex(
+            (column) => column.id === 'duration'
+          );
+          defaultColumns.splice(index, 0, {
+            // another column for JIRA link
+            id: 'jira',
+            name: 'JIRA Key',
+            width: 100,
+            searchable: true,
+            styleMap: 'font-weight:normal;',
+            formatter: (v, rowItem, columnItem) => {
+              const key = rowItem[columnItem.id];
+              return `<a href="https://rocketchat.atlassian.net/${key}" target="_blank">${v}</a>`;
+            },
+          });
+          defaultColumns.push({
+            id: 'description',
+            name: 'Description',
+            width: 300,
+            markdown: true,
+            searchable: true,
+          });
+        },
       },
     ],
   ],
-  testDir: './tests',
-  /* Run tests in files in parallel */
-  fullyParallel: true,
-  /* Fail the build on CI if you accidentally left test.only in the source code. */
-  forbidOnly: !!process.env.CI,
-  /* Retry on CI only */
-  retries: process.env.CI ? 2 : 0,
-  /* Opt out of parallel tests on CI. */
-  workers: process.env.CI ? 1 : undefined,
-  /* Reporter to use. See https://playwright.dev/docs/test-reporters */
-  /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
-  use: {
-    /* Base URL to use in actions like `await page.goto('/')`. */
-    // baseURL: 'http://127.0.0.1:3000',
 
-    /* Collect trace when retrying the failed test. See https://playwright.dev/docs/trace-viewer */
+  testDir: './tests',
+  fullyParallel: true,
+  forbidOnly: !!process.env.CI,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
+  use: {
     trace: 'on-first-retry',
+    screenshot: 'only-on-failure',
+    video: 'on-first-retry',
   },
 
   /* Configure projects for major browsers */
@@ -52,33 +94,5 @@ export default defineConfig({
       name: 'firefox',
       use: { ...devices['Desktop Firefox'] },
     },
-
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ..devices['Desktop Chrome'], channel: 'chrome' },
-    // },
   ],
-
-  /* Run your local dev server before starting the tests */
-  // webServer: {
-  //   command: 'npm run start',
-  //   url: 'http://127.0.0.1:3000',
-  //   reuseExistingServer: !process.env.CI,
-  // },
 });

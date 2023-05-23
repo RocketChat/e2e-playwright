@@ -10,7 +10,10 @@ export default defineConfig({
         name: 'My Test Report',
         outputFile: './test-results/report.html',
         visitor: (data, metadata, collect) => {
-          const parserOptions = {};
+          const parserOptions = {
+            sourceType: 'module',
+            plugins: ['typescript'],
+          };
           const comments = collect.comments(parserOptions);
           if (comments) {
             Object.assign(data, comments);

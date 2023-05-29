@@ -6,6 +6,7 @@
     "createNew": "dropdown"
   },
   "text": {
-    "team": "Team"
+    "team": "Team",
+    "channel": "Channel"
   }
 }

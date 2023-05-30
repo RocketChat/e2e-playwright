@@ -1,6 +1,6 @@
 import { test, expect } from '@playwright/test';
-import { login } from '../../support/user';
-import { deleteTeam } from '../../support/team';
+import { login } from '../../admin/support/user';
+import { deleteTeam } from './support/team';
 import home from '../../../locators/home.json';
 import createTeam from '../../../locators/createTeam.json';
 test.describe('Create Teams', () => {

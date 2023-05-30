@@ -3,6 +3,7 @@ import { defineConfig, devices } from '@playwright/test';
 require('dotenv').config();
 
 export default defineConfig({
+  globalSetup: require.resolve('./tests/global/global-setup.ts'),
   reporter: [
     [
       'monocart-reporter',
@@ -82,7 +83,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
     // All requests we send go to this API endpoint.
-    baseURL: process.env.CANDIDATEEE,
+    baseURL: process.env.CANDIDATE_EE,
     extraHTTPHeaders: {
       // We set this header per GitHub guidelines.
       Accept: 'application/vnd.github.v3+json',

@@ -1,11 +1,13 @@
 {
   "button": {
-    "createNew": "button[data-qa='sidebar-create']"
+    "createNew": "button[data-qa='sidebar-create']",
+    "administration": "Administration"
   },
   "dropdown": {
     "createNew": "dropdown"
   },
   "text": {
-    "team": "Team"
+    "team": "Team",
+    "marketplace": "Marketplace"
   }
 }

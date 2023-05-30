@@ -1,0 +1,27 @@
+{
+  "link": {
+    "privateApp": "Private Apps",
+    "dataLossEnabled": "Data Loss Prevention Enabled",
+    "facebookEnabled": "Facebook Messenger Enabled ",
+    "appInstalled": "Installed"
+  },
+  "button": {
+    "uploadPrivateApp": "Upload Private App",
+    "browseFiles": "Browse Files",
+    "install": "Install",
+    "agree": "Agree",
+    "yes": "Yes"
+  },
+  "text": {
+    "dataLoss": "Data Loss Prevention",
+    "facebook": "Facebook Messenger",
+    "unistall": "Uninstall"
+  },
+  "placeholder": {
+    "searchInstalledApp": "Search installed apps",
+    "searchPrivateApp": "Search private apps"
+  },
+  "testId": {
+    "menuSingleApp": "menu"
+  }
+}

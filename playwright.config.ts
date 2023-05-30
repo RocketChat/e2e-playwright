@@ -81,6 +81,15 @@ export default defineConfig({
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
+    // All requests we send go to this API endpoint.
+    baseURL: process.env.CANDIDATEEE,
+    extraHTTPHeaders: {
+      // We set this header per GitHub guidelines.
+      Accept: 'application/vnd.github.v3+json',
+      // Add authorization token to all requests.
+      // Assuming personal access token available in the environment.
+      Authorization: `token ${process.env.API_TOKEN}`,
+    },
   },
 
   /* Configure projects for major browsers */

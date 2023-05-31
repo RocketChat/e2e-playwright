@@ -25,7 +25,6 @@ export async function searchAppPrivate(page: Page, appName: any) {
     .getByPlaceholder(locator.placeholder.searchPrivateApp)
     .fill(`${appName}`);
   await delay(3000);
-
   if (
     await page
       .getByRole('link')
@@ -37,9 +36,13 @@ export async function searchAppPrivate(page: Page, appName: any) {
 }
 
 export async function unistallAppAPI(request: APIRequestContext, app: string) {
-  const response = await request.delete(`/api/apps/${app}`);
+  await request.delete(`/api/apps/${app}`, {
+    headers: {
+      'X-Auth-Token': `${process.env.API_TOKEN}`,
+      'X-User-Id': `${process.env.USERID}`,
+    },
+  });
 }
-
 export async function unistallApp(page: Page, appName: String) {
   let appisntalledPrivate = await searchAppPrivate(page, appName);
   if (appisntalledPrivate) {
@@ -54,7 +57,6 @@ export async function unistallApp(page: Page, appName: String) {
     await page.getByRole('button', { name: locator.button.yes }).click();
   }
 }
-
 export async function installPrivateApp(
   page: Page,
   appName: string,
@@ -67,9 +69,7 @@ export async function installPrivateApp(
     .click();
   await fileUpload(locator.button.browseFiles, appPath, page);
   await page.getByRole('button', { name: locator.button.install }).click();
-  await delay(3000);
   await page.getByRole('button', { name: locator.button.agree }).click();
-  await delay(5000);
 }
 
 export async function goToMarketplace(page: Page) {

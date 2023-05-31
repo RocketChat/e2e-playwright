@@ -4,6 +4,7 @@ require('dotenv').config();
 
 export default defineConfig({
   globalSetup: require.resolve('./tests/global/global-setup.ts'),
+  timeout: 80000,
   reporter: [
     [
       'monocart-reporter',
@@ -89,7 +90,6 @@ export default defineConfig({
       Accept: 'application/vnd.github.v3+json',
       // Add authorization token to all requests.
       // Assuming personal access token available in the environment.
-      Authorization: `token ${process.env.API_TOKEN}`,
     },
   },
 
@@ -97,7 +97,9 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'] },
+      use: {
+        ...devices['Desktop Chrome'],
+      },
     },
 
     {

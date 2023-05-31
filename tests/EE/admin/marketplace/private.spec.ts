@@ -227,11 +227,11 @@ test.describe('Private Apps', () => {
   });
 
   test('Inside menu Private App', async ({ page }) => {
-    installPrivateApp(page, locator.text.dataLoss, fixtures.pathDataloss);
-    expect(page.getByRole('tab', { name: 'Details' })).toBeVisible();
-    expect(page.getByRole('tab', { name: 'Security' })).toBeVisible();
-    expect(page.getByRole('tab', { name: 'Releases' })).toBeVisible();
-    expect(page.getByRole('tab', { name: 'Settings' })).toBeVisible();
-    expect(page.getByRole('tab', { name: 'Logs' })).toBeVisible();
+    await installPrivateApp(page, locator.text.dataLoss, fixtures.pathDataloss);
+    await expect(page.getByRole('tab', { name: 'Details' })).toBeVisible();
+    await expect(page.getByRole('tab', { name: 'Security' })).toBeVisible();
+    await expect(page.getByRole('tab', { name: 'Releases' })).toBeVisible();
+    await expect(page.getByRole('tab', { name: 'Settings' })).toBeVisible();
+    await expect(page.getByRole('tab', { name: 'Logs' })).toBeVisible();
   });
 });

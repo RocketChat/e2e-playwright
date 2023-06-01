@@ -14,8 +14,8 @@ export default async function (): Promise<void> {
     timeout: 0,
   });
   const dataJson = await response.json();
-  const token = dataJson.authToken;
-  const userId = dataJson.userId;
+  const token = dataJson.data.authToken;
+  const userId = dataJson.data.userId;
   process.env.API_TOKEN = token;
   process.env.USERID = userId;
   await requestContext.storageState({ path: authFile });

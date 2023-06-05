@@ -5,5 +5,9 @@
     "placeholder": {
         "selectChannel": "Select a channel which is related to what you want to ask",
         "nameDiscussion": "A meaningful name for the discussion room"
+    },
+    "names": {
+        "channel": "discussion-channel-automation",
+        "discussion": "discussion-automation"
     }
 }

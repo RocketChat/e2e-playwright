@@ -5,12 +5,12 @@ import createDiscussion from '../../../locators/createDiscussion.json';
 import { deleteDiscussion, deleteDiscussionAPI } from './support/discussion';
 import { createChannelAPI, deleteChannel } from '../channel/support/channel';
 
-test.beforeEach(async ({ page, context }) => {
-  await createChannelAPI(context.request, 'discussion-channel-automation'); 
+test.beforeEach(async ({ page, request }) => {
+  await createChannelAPI(request, createDiscussion.names.channel); 
   await login(page);
 });
 
-test('Create a discussion', async ({ page, context }) => {
+test('Create a discussion', async ({ page }) => {
   await page.locator(home.button.createNew).click();
   await page
     .getByTestId(home.dropdown.createNew)
@@ -18,17 +18,17 @@ test('Create a discussion', async ({ page, context }) => {
     .click();
   await page
     .getByPlaceholder(createDiscussion.placeholder.selectChannel)
-    .fill('discussion-channel-automation')
-  await page.getByRole('option', { name: 'discussion-channel-automation', exact: true }).locator('div').first().click();
-  await page.getByPlaceholder(createDiscussion.placeholder.nameDiscussion).fill('discussionTestAutomation');
+    .fill(createDiscussion.names.channel)
+  await page.getByRole('option', { name: createDiscussion.names.channel, exact: true }).locator('div').first().click();
+  await page.getByPlaceholder(createDiscussion.placeholder.nameDiscussion).fill(createDiscussion.names.discussion);
   await page.getByRole('button', { name: createDiscussion.button.create }).click();
 
   expect(
-    await page.getByRole('link', { name: 'discussionTestAutomation' }).isVisible()
+    await page.getByRole('link', { name: createDiscussion.names.discussion }).isVisible()
   );
 });
 
-test.afterEach(async ({ page, context }) => {
-  await deleteDiscussionAPI(context.request, 'discussionTestAutomation');
-  await deleteChannel(page, 'discussion-channel-automation');
+test.afterEach(async ({ page, request }) => {
+  await deleteDiscussionAPI(request, createDiscussion.names.discussion);
+  await deleteChannel(page, createDiscussion.names.channel);
 });

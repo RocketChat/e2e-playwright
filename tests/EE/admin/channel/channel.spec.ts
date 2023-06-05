@@ -16,11 +16,11 @@ test('Create a Private Channel', async ({ page }) => {
     .click();
   await page
     .getByPlaceholder(createChannel.placeholder.channelName)
-    .fill('ChannelTestAutomation');
+    .fill(createChannel.names.channel);
   await page.getByRole('button', { name: createChannel.button.create }).click();
 
   expect(
-    await page.getByRole('link', { name: 'ChannelTestAutomation' }).isVisible()
+    await page.getByRole('link', { name: createChannel.names.channel }).isVisible()
   );
 });
 
@@ -32,15 +32,15 @@ test('Create a Public Channel', async ({ page }) => {
     .click();
   await page
     .getByPlaceholder(createChannel.placeholder.channelName)
-    .fill('ChannelTestAutomation');
+    .fill(createChannel.names.channel);
   await page.locator(createChannel.toggle.private).first().click();
   await page.getByRole('button', { name: createChannel.button.create }).click();
 
   expect(
-    await page.getByRole('link', { name: 'ChannelTestAutomation' }).isVisible()
+    await page.getByRole('link', { name: createChannel.names.channel }).isVisible()
   );
 });
 
 test.afterEach(async ({ page }) => {
-  await deleteChannel(page, 'ChannelTestAutomation');
+  await deleteChannel(page, createChannel.names.channel);
 });

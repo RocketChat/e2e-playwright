@@ -1,12 +1,14 @@
 {
-    "button": {
-      "create": "Create"
-    },
-    "placeholder": {
-      "channelName": "Channel Name"
-    },
-    "toggle": {
-      "private": "label > i"
-    }
+  "button": {
+    "create": "Create"
+  },
+  "placeholder": {
+    "channelName": "Channel Name"
+  },
+  "toggle": {
+    "private": "label > i"
+  },
+  "names": {
+    "channel": "ChannelTestAutomation"
   }
-  
+}

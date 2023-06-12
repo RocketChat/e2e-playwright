@@ -11,12 +11,20 @@ export async function searchAppInstalled(page: Page, appName: String) {
   await delay(3000);
   if (
     await page
-      .getByRole('link')
+      .locator('div[role="link"]')
       .filter({ hasText: `${appName}` })
       .isVisible()
   ) {
     return true;
   } else return false;
+}
+
+export async function searchAppExplore(page: Page, appName: String) {
+  await page.getByRole('link', { name: locator.link.explore }).click();
+  await page
+    .getByPlaceholder(locator.placeholder.searchApps)
+    .fill(`${appName}`);
+  await delay(3000);
 }
 
 export async function searchAppPrivate(page: Page, appName: any) {
@@ -27,7 +35,7 @@ export async function searchAppPrivate(page: Page, appName: any) {
   await delay(3000);
   if (
     await page
-      .getByRole('link')
+      .locator('div[role=link]')
       .filter({ hasText: `${appName}` })
       .isVisible()
   ) {
@@ -36,12 +44,43 @@ export async function searchAppPrivate(page: Page, appName: any) {
 }
 
 export async function unistallAppAPI(request: APIRequestContext, app: string) {
-  await request.delete(`/api/apps/${app}`, {
-    headers: {
-      'X-Auth-Token': `${process.env.API_TOKEN}`,
-      'X-User-Id': `${process.env.USERID}`,
-    },
-  });
+  try {
+    await request.delete(`/api/apps/${app}`, {
+      headers: {
+        'X-Auth-Token': `${process.env.API_TOKEN}`,
+        'X-User-Id': `${process.env.USERID}`,
+      },
+    });
+  } catch (error) {
+    console.log(error + ' App was not uninstalled');
+  }
+}
+
+export async function installAppAPI(request: APIRequestContext, app: string) {
+  try {
+    await request.post(`/api/apps/`, {
+      headers: {
+        'X-Auth-Token': `${process.env.API_TOKEN}`,
+        'X-User-Id': `${process.env.USERID}`,
+      },
+      data: {
+        appId: `${app}`,
+        marketplace: true,
+        //version: '0.1.1',
+      },
+    });
+  } catch (error) {
+    console.log(error + ' App was not installed');
+  }
+}
+
+export async function unistallPrivateApp(page: Page, appName: string) {
+  let appisntalledPrivate = await searchAppPrivate(page, appName);
+  if (appisntalledPrivate) {
+    await page.getByTestId(locator.testId.menuSingleApp).click();
+    await page.getByText(locator.text.unistall).click();
+    await page.getByRole('button', { name: locator.button.yes }).click();
+  }
 }
 export async function unistallApp(page: Page, appName: String) {
   let appisntalledPrivate = await searchAppPrivate(page, appName);

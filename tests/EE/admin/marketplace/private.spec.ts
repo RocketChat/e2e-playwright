@@ -4,7 +4,6 @@ import {
   goToMarketplace,
   searchAppPrivate,
   installPrivateApp,
-  unistallAppAPI,
   unistallApp,
 } from './support/marketplace';
 import { fileUpload } from '../../../support/helpers';
@@ -35,17 +34,13 @@ test.describe('Private Apps', () => {
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
     await searchAppPrivate(page, locator.text.dataLoss);
-    expect(
-      await page
-        .getByRole('link', { name: locator.link.dataLossEnabled })
-        .isVisible()
-    );
+    await expect(
+      page.getByRole('link', { name: `${locator.link.apps.dataLoss} Enabled` })
+    ).toBeVisible();
     await searchAppPrivate(page, locator.text.facebook);
-    expect(
-      await page
-        .getByRole('link', { name: locator.link.facebookEnabled })
-        .isVisible()
-    );
+    await expect(
+      page.getByRole('link', { name: `${locator.link.apps.facebook} Enabled` })
+    ).toBeVisible();
   });
 
   test('Uninstall a Private App - Outside Menu', async ({ page }) => {
@@ -88,70 +83,62 @@ test.describe('Private Apps', () => {
     await installPrivateApp(page, locator.text.facebook, fixtures.pathFacebook);
     await installPrivateApp(page, locator.text.dataLoss, fixtures.pathDataloss);
 
-    //Disable - Facebook
+    //Disabled - Facebook
     await searchAppPrivate(page, locator.text.facebook);
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.disable).click();
     await page.getByRole('button', { name: locator.button.yes }).click();
     await expect(page.locator(locator.class.toast)).toHaveText(
-      'Facebook Messenger disabled'
+      'Facebook Messenger apps'
     );
     await searchAppPrivate(page, locator.text.facebook);
-    expect(
-      await page
-        .getByRole('link', { name: locator.link.facebookDisabled })
-        .isVisible()
-    );
+    await expect(
+      page.getByRole('link', { name: `${locator.link.apps.facebook} Disabled` })
+    ).toBeVisible();
 
-    //Disable - Data Loss
+    //Disabled - Data Loss
     await searchAppPrivate(page, locator.text.dataLoss);
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.disable).click();
     await page.getByRole('button', { name: locator.button.yes }).click();
     await expect(page.locator(locator.class.toast)).toHaveText(
-      'Data Loss Prevention disabled'
+      'Data Loss Prevention apps'
     );
     await searchAppPrivate(page, locator.text.dataLoss);
-    expect(
-      await page
-        .getByRole('link', { name: locator.link.dataLossDisabled })
-        .isVisible()
-    );
+    await expect(
+      page.getByRole('link', { name: `${locator.link.apps.dataLoss} Disabled` })
+    ).toBeVisible();
 
     //Enable - Facebook
     await searchAppPrivate(page, locator.text.facebook);
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.enable).click();
     await expect(page.locator(locator.class.toast)).toHaveText(
-      'Facebook Messenger enabled'
+      'Facebook Messenger apps'
     );
     await searchAppPrivate(page, locator.text.facebook);
-    expect(
-      await page
-        .getByRole('link', { name: locator.link.facebookEnabled })
-        .isVisible()
-    );
+    await expect(
+      page.getByRole('link', { name: `${locator.link.apps.facebook} Enabled` })
+    ).toBeVisible();
 
     //Enable - Data Loss
     await searchAppPrivate(page, locator.text.dataLoss);
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.enable).click();
     await expect(page.locator(locator.class.toast)).toHaveText(
-      'Data Loss Prevention enabled'
+      'Data Loss Prevention apps'
     );
     await searchAppPrivate(page, locator.text.dataLoss);
-    expect(
-      await page
-        .getByRole('link', { name: locator.link.dataLossEnabled })
-        .isVisible()
-    );
+    await expect(
+      page.getByRole('link', { name: `${locator.link.apps.dataLoss} Enabled` })
+    ).toBeVisible();
   });
 
   test('Enable and Disable two Private App - Inside Menu', async ({ page }) => {
     await installPrivateApp(page, locator.text.facebook, fixtures.pathFacebook);
     await installPrivateApp(page, locator.text.dataLoss, fixtures.pathDataloss);
 
-    //Disable - Facebook
+    //Disabled - Facebook
     await searchAppPrivate(page, locator.text.facebook);
     await page
       .getByRole('link')
@@ -161,16 +148,14 @@ test.describe('Private Apps', () => {
     await page.getByText(locator.text.disable).click();
     await page.getByRole('button', { name: locator.button.yes }).click();
     await expect(page.locator(locator.class.toast)).toHaveText(
-      'Facebook Messenger disabled'
+      'Facebook Messenger apps'
     );
     await searchAppPrivate(page, locator.text.facebook);
-    expect(
-      await page
-        .getByRole('link', { name: locator.link.facebookDisabled })
-        .isVisible()
-    );
+    await expect(
+      page.getByRole('link', { name: `${locator.link.apps.dataLoss} Disabled` })
+    ).toBeVisible();
 
-    //Disable - Data Loss
+    //Disabled - Data Loss
     await searchAppPrivate(page, locator.text.dataLoss);
     await page
       .getByRole('link')
@@ -180,14 +165,12 @@ test.describe('Private Apps', () => {
     await page.getByText(locator.text.disable).click();
     await page.getByRole('button', { name: locator.button.yes }).click();
     await expect(page.locator(locator.class.toast)).toHaveText(
-      'Data Loss Prevention disabled'
+      'Data Loss Prevention apps'
     );
     await searchAppPrivate(page, locator.text.dataLoss);
-    expect(
-      await page
-        .getByRole('link', { name: locator.link.dataLossDisabled })
-        .isVisible()
-    );
+    await expect(
+      page.getByRole('link', { name: `${locator.link.apps.dataLoss} Disabled` })
+    ).toBeVisible();
 
     //Enable - Facebook
     await searchAppPrivate(page, locator.text.facebook);
@@ -198,14 +181,12 @@ test.describe('Private Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.enable).click();
     await expect(page.locator(locator.class.toast)).toHaveText(
-      'Facebook Messenger enabled'
+      'Facebook Messenger apps'
     );
     await searchAppPrivate(page, locator.text.facebook);
-    expect(
-      await page
-        .getByRole('link', { name: locator.link.facebookEnabled })
-        .isVisible()
-    );
+    await expect(
+      page.getByRole('link', { name: `${locator.link.apps.facebook} Enabled` })
+    ).toBeVisible();
 
     //Enable - Data Loss
     await searchAppPrivate(page, locator.text.dataLoss);
@@ -216,14 +197,12 @@ test.describe('Private Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.enable).click();
     await expect(page.locator(locator.class.toast)).toHaveText(
-      'Data Loss Prevention enabled'
+      'Data Loss Prevention apps'
     );
     await searchAppPrivate(page, locator.text.dataLoss);
-    expect(
-      await page
-        .getByRole('link', { name: locator.link.dataLossEnabled })
-        .isVisible()
-    );
+    await expect(
+      page.getByRole('link', { name: `${locator.link.apps.dataLoss} Enabled` })
+    ).toBeVisible();
   });
 
   test('Inside menu Private App', async ({ page }) => {

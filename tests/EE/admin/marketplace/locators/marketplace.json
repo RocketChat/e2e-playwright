@@ -1,11 +1,38 @@
 {
   "link": {
     "privateApp": "Private Apps",
-    "dataLossEnabled": "Data Loss Prevention Enabled",
-    "facebookEnabled": "Facebook Messenger Enabled ",
-    "dataLossDisabled": "Data Loss Prevention Disabled",
-    "facebookDisabled": "Facebook Messenger Disabled",
-    "appInstalled": "Installed"
+    "appInstalled": "Installed",
+    "explore": "Explore",
+    "apps": {
+      "enterprise": {
+        "bambooIntegration": "Bamboo Integration Enterprise",
+        "bitbucketCloudIntegration": "Bitbucket Cloud Integration Enterprise",
+        "bitbucketServerIntegration": "Bitbucket Server Integration Enterprise",
+        "confluenceCloudIntegration": "Confluence Cloud Integration Enterprise",
+        "confluenceServerIntegration": "Confluence Server Integration Enterprise",
+        "dataLoss": "Data Loss Prevention Enterprise",
+        "fabulor": "Fabulor Enterprise Make your workspace more Fabulous!",
+        "facebook": "Facebook Messenger Enterprise FB Messenger integration for Omnichannel",
+        "googleCalendar": "Google Calendar Enterprise Make the most of every day",
+        "googleDrive": "Google Drive Enterprise Use and manage Drive from inside Rocket.Chat",
+        "googleMeet": "Google Meet Enterprise Google Meet Conference Calls Provider",
+        "instagramDirect": "Instagram Direct Enterprise Use Instagram from inside Rocket.Chat",
+        "jiraCloudIntegration": "Jira Cloud Integration Enterprise",
+        "jiraServerIntegration": "Jira Server Integration Enterprise Integration with Jira Server for Rocket.Chat",
+        "pexip": "Pexip Enterprise Pexip Conference Calls Provider",
+        "telegram": "Telegram Enterprise Telegram integration for Omnichannel",
+        "trello": "Trello Enterprise Create on Trello from inside Rocket.Chat",
+        "twitter": "Twitter Enterprise Twitter DM integration for Omnichannel",
+        "whatsAppCloud": "WhatsApp Cloud Enterprise WhatsApp Cloud integration for Omnichannel.",
+        "zapier": "Zapier Enterprise Do what you do best, let Zapier do the rest",
+        "zoom": "Zoom Enterprise"
+      },
+      "botpressConnector": "Botpress Connector",
+      "collaboard": "Collaboard Collaborative Online Whiteboard",
+      "github": "Github Ultimate GitHub Integration for Rocket.Chat",
+      "microsoftTeams": "Microsoft Teams Bridge Communicate and collaborate with MS Teams",
+      "reminderBot": "Reminder Bot Create reminders within Rocket.Chat"
+    }
   },
   "button": {
     "uploadPrivateApp": "Upload Private App",
@@ -19,11 +46,13 @@
     "facebook": "Facebook Messenger",
     "unistall": "Uninstall",
     "disable": "Disable",
-    "enable": "Enable"
+    "enable": "Enable",
+    "install": "Install"
   },
   "placeholder": {
     "searchInstalledApp": "Search installed apps",
-    "searchPrivateApp": "Search private apps"
+    "searchPrivateApp": "Search private apps",
+    "searchApps": "Search apps"
   },
   "testId": {
     "menuSingleApp": "menu"

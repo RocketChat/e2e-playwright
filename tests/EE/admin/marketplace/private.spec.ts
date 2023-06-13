@@ -35,11 +35,15 @@ test.describe('Private Apps', () => {
     await page.getByRole('button', { name: locator.button.agree }).click();
     await searchAppPrivate(page, locator.text.dataLoss);
     await expect(
-      page.getByRole('link', { name: `${locator.link.apps.dataLoss} Enabled` })
+      page.getByRole('link', {
+        name: `${locator.link.apps.enterprise.dataLoss} Enabled`,
+      })
     ).toBeVisible();
     await searchAppPrivate(page, locator.text.facebook);
     await expect(
-      page.getByRole('link', { name: `${locator.link.apps.facebook} Enabled` })
+      page.getByRole('link', {
+        name: `${locator.link.apps.enterprise.facebook} Enabled`,
+      })
     ).toBeVisible();
   });
 
@@ -93,7 +97,9 @@ test.describe('Private Apps', () => {
     );
     await searchAppPrivate(page, locator.text.facebook);
     await expect(
-      page.getByRole('link', { name: `${locator.link.apps.facebook} Disabled` })
+      page.getByRole('link', {
+        name: `${locator.link.apps.enterprise.facebook} Disabled`,
+      })
     ).toBeVisible();
 
     //Disabled - Data Loss
@@ -106,7 +112,9 @@ test.describe('Private Apps', () => {
     );
     await searchAppPrivate(page, locator.text.dataLoss);
     await expect(
-      page.getByRole('link', { name: `${locator.link.apps.dataLoss} Disabled` })
+      page.getByRole('link', {
+        name: `${locator.link.apps.enterprise.dataLoss} Disabled`,
+      })
     ).toBeVisible();
 
     //Enable - Facebook
@@ -118,7 +126,9 @@ test.describe('Private Apps', () => {
     );
     await searchAppPrivate(page, locator.text.facebook);
     await expect(
-      page.getByRole('link', { name: `${locator.link.apps.facebook} Enabled` })
+      page.getByRole('link', {
+        name: `${locator.link.apps.enterprise.facebook} Enabled`,
+      })
     ).toBeVisible();
 
     //Enable - Data Loss
@@ -130,7 +140,9 @@ test.describe('Private Apps', () => {
     );
     await searchAppPrivate(page, locator.text.dataLoss);
     await expect(
-      page.getByRole('link', { name: `${locator.link.apps.dataLoss} Enabled` })
+      page.getByRole('link', {
+        name: `${locator.link.apps.enterprise.dataLoss} Enabled`,
+      })
     ).toBeVisible();
   });
 
@@ -152,7 +164,9 @@ test.describe('Private Apps', () => {
     );
     await searchAppPrivate(page, locator.text.facebook);
     await expect(
-      page.getByRole('link', { name: `${locator.link.apps.dataLoss} Disabled` })
+      page.getByRole('link', {
+        name: `${locator.link.apps.enterprise.dataLoss} Disabled`,
+      })
     ).toBeVisible();
 
     //Disabled - Data Loss
@@ -169,7 +183,9 @@ test.describe('Private Apps', () => {
     );
     await searchAppPrivate(page, locator.text.dataLoss);
     await expect(
-      page.getByRole('link', { name: `${locator.link.apps.dataLoss} Disabled` })
+      page.getByRole('link', {
+        name: `${locator.link.apps.enterprise.dataLoss} Disabled`,
+      })
     ).toBeVisible();
 
     //Enable - Facebook
@@ -185,7 +201,9 @@ test.describe('Private Apps', () => {
     );
     await searchAppPrivate(page, locator.text.facebook);
     await expect(
-      page.getByRole('link', { name: `${locator.link.apps.facebook} Enabled` })
+      page.getByRole('link', {
+        name: `${locator.link.apps.enterprise.facebook} Enabled`,
+      })
     ).toBeVisible();
 
     //Enable - Data Loss
@@ -201,7 +219,9 @@ test.describe('Private Apps', () => {
     );
     await searchAppPrivate(page, locator.text.dataLoss);
     await expect(
-      page.getByRole('link', { name: `${locator.link.apps.dataLoss} Enabled` })
+      page.getByRole('link', {
+        name: `${locator.link.apps.enterprise.dataLoss} Enabled`,
+      })
     ).toBeVisible();
   });
 

@@ -135,7 +135,9 @@ test.describe('Install Apps', () => {
     );
     await searchAppInstalled(page, fixtures.appName.microsoftTeams);
     await expect(
-      page.getByRole('link', { name: locator.link.apps.microsoftTeams })
+      page.getByRole('link', {
+        name: `${locator.link.apps.microsoftTeams} Enabled`,
+      })
     ).toBeVisible();
   });
 
@@ -153,7 +155,9 @@ test.describe('Install Apps', () => {
     );
     await searchAppInstalled(page, fixtures.appName.microsoftTeams);
     await expect(
-      page.getByRole('link', { name: locator.link.apps.microsoftTeams })
+      page.getByRole('link', {
+        name: `${locator.link.apps.microsoftTeams} Enabled`,
+      })
     ).toBeVisible();
   });
 
@@ -168,7 +172,7 @@ test.describe('Install Apps', () => {
     );
     await searchAppInstalled(page, fixtures.appName.github);
     await expect(
-      page.getByRole('link', { name: locator.link.apps.github })
+      page.getByRole('link', { name: `${locator.link.apps.github} Enabled` })
     ).toBeVisible();
   });
 
@@ -186,7 +190,7 @@ test.describe('Install Apps', () => {
     );
     await searchAppInstalled(page, fixtures.appName.github);
     await expect(
-      page.getByRole('link', { name: locator.link.apps.github })
+      page.getByRole('link', { name: `${locator.link.apps.github} Enabled` })
     ).toBeVisible();
   });
 
@@ -201,7 +205,7 @@ test.describe('Install Apps', () => {
     );
     await searchAppInstalled(page, fixtures.appName.reminderBot);
     await expect(
-      page.getByRole('link', { name: locator.link.apps.reminderBot })
+      page.getByRole('link', { name: `${locator.link.apps.reminderBot}` })
     ).toBeVisible();
   });
 
@@ -219,7 +223,7 @@ test.describe('Install Apps', () => {
     );
     await searchAppInstalled(page, fixtures.appName.reminderBot);
     await expect(
-      page.getByRole('link', { name: locator.link.apps.reminderBot })
+      page.getByRole('link', { name: `${locator.link.apps.reminderBot}` })
     ).toBeVisible();
   });
 
@@ -237,7 +241,9 @@ test.describe('Install Apps', () => {
     );
     await searchAppInstalled(page, fixtures.appName.botpressConnector);
     await expect(
-      page.getByRole('link', { name: locator.link.apps.botpressConnector })
+      page.getByRole('link', {
+        name: `${fixtures.appName.botpressConnector} Enabled`,
+      })
     ).toBeVisible();
   });
 
@@ -258,7 +264,9 @@ test.describe('Install Apps', () => {
     );
     await searchAppInstalled(page, fixtures.appName.botpressConnector);
     await expect(
-      page.getByRole('link', { name: locator.link.apps.botpressConnector })
+      page.getByRole('link', {
+        name: `${fixtures.appName.botpressConnector} Enabled`,
+      })
     ).toBeVisible();
   });
 
@@ -273,7 +281,9 @@ test.describe('Install Apps', () => {
     );
     await searchAppInstalled(page, fixtures.appName.collaboard);
     await expect(
-      page.getByRole('link', { name: locator.link.apps.collaboard })
+      page.getByRole('link', {
+        name: `${locator.link.apps.collaboard} Enabled`,
+      })
     ).toBeVisible();
   });
 
@@ -291,7 +301,9 @@ test.describe('Install Apps', () => {
     );
     await searchAppInstalled(page, fixtures.appName.collaboard);
     await expect(
-      page.getByRole('link', { name: locator.link.apps.collaboard })
+      page.getByRole('link', {
+        name: `${locator.link.apps.collaboard} Enabled`,
+      })
     ).toBeVisible();
   });
 });

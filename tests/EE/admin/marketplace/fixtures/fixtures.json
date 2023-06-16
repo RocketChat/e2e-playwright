@@ -44,6 +44,7 @@
     "gitlab": "684202ed-1461-4983-9ea7-fde74b15026c",
     "goldDiggerFRVR": "08ab4774-150d-4ef8-898c-48540eeaacf6",
     "hexFRVR": "8acc31b7-e0fb-41ef-a5bb-9bbcba091aae",
+    "hubspotCRMIntegration": "58eba86a-58e0-4fa2-b26c-2ef03d7dc18d",
     "microsoftTeams": "30d2e4bf-2402-4197-b844-e7082b07dc65",
     "reminderBot": "7a8cd36b-5f7b-4177-bd7f-bfc9be908bf8"
   },
@@ -90,6 +91,7 @@
     "gitlab": "GitLab",
     "goldDiggerFRVR": "Gold Digger FRVR",
     "hexFRVR": "Hex FRVR",
+    "hubspotCRMIntegration": "Hubspot CRM Integration",
     "microsoftTeams": "Microsoft Teams Bridge",
     "reminderBot": "Reminder Bot"
   }

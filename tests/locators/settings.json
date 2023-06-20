@@ -1,0 +1,10 @@
+{
+  "menu": {
+    "users": {
+      "title": "Users",
+      "placeHolder": {
+        "searchBar": "Search Users"
+      }
+    }
+  }
+}

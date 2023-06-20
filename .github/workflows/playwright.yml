@@ -23,6 +23,7 @@ jobs:
         echo CANDIDATE_EE="https://candidate.rocket.chat" >> .env
         echo USER_ADMIN="automationCandidate" >> .env
         echo PASSWORD_ADMIN=${{secrets.PASSWORD_ADMIN}} >> .env
+        echo SHA256HASHPASSWORD=${{secrets.SHA256HASHPASSWORD}} >> .env
     - name: Run Playwright tests
       run: yarn playwright test
     - uses: actions/upload-artifact@v3

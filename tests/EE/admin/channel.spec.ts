@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/test';
-import { login } from '../../admin/support/user';
-import home from '../../../locators/home.json';
-import createChannel from '../../../locators/createChannel.json';
-import { deleteChannel } from '../channel/support/channel';
+import { expect, test } from '@playwright/test';
+import createChannel from '../../locators/createChannel.json';
+import home from '../../locators/home.json';
+import { deleteChannel } from '../../support/admin/channel';
+import { login } from '../../support/admin/login';
 
 test.beforeEach(async ({ page }) => {
   await login(page);
@@ -20,7 +20,9 @@ test('Create a Private Channel', async ({ page }) => {
   await page.getByRole('button', { name: createChannel.button.create }).click();
 
   expect(
-    await page.getByRole('link', { name: createChannel.names.channel }).isVisible()
+    await page
+      .getByRole('link', { name: createChannel.names.channel })
+      .isVisible()
   );
 });
 
@@ -37,7 +39,9 @@ test('Create a Public Channel', async ({ page }) => {
   await page.getByRole('button', { name: createChannel.button.create }).click();
 
   expect(
-    await page.getByRole('link', { name: createChannel.names.channel }).isVisible()
+    await page
+      .getByRole('link', { name: createChannel.names.channel })
+      .isVisible()
   );
 });
 

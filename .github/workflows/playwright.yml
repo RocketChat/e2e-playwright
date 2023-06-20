@@ -21,7 +21,7 @@ jobs:
     - name: Create env file
       run: |
         touch .env
-        echo CANDIDATE_EE="https://candidate.rocket.chat" >> .env
+        echo URL="https://candidate.rocket.chat" >> .env
         echo USER_ADMIN="automationCandidate" >> .env
         echo PASSWORD_ADMIN=${{secrets.PASSWORD_ADMIN}} >> .env
     - name: Run Playwright tests
@@ -47,7 +47,7 @@ jobs:
     - name: Create env file
       run: |
         touch .env
-        echo CANDIDATE_EE="https://unstable.rocket.chat" >> .env
+        echo URL="https://unstable.rocket.chat" >> .env
         echo USER_ADMIN="automationCandidate" >> .env
         echo PASSWORD_ADMIN=${{secrets.PASSWORD_ADMIN}} >> .env
     - name: Run Playwright tests

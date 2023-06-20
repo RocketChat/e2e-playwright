@@ -84,7 +84,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
     // All requests we send go to this API endpoint.
-    baseURL: process.env.CANDIDATE_EE,
+    baseURL: process.env.URL,
     extraHTTPHeaders: {
       // We set this header per GitHub guidelines.
       Accept: 'application/vnd.github.v3+json',

@@ -11,7 +11,8 @@
   "scripts": {
     "test": "playwright test",
     "test:headed": "playwright test --headed",
-    "test:unstable": "URL=https://unstable.rocket.chat playwright test"
+    "test:unstable": "URL=https://unstable.rocket.chat playwright test",
+    "test:unstable:headed": "URL=https://unstable.rocket.chat playwright test --headed"
   },
   "dependencies": {
     "dotenv": "^16.0.3",

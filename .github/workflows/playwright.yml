@@ -30,9 +30,10 @@ jobs:
       if: always()
       with:
         name: report
-        path: test-results/candidate
+        path: test-results/
         retention-days: 30
   test_Unstable: 
+    needs: test
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
@@ -56,6 +57,6 @@ jobs:
       if: always()
       with:
         name: report
-        path: test-results/unstable
+        path: test-results/
         retention-days: 30
 

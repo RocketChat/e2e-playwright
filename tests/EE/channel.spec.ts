@@ -1,8 +1,8 @@
-import { expect, test } from "@playwright/test";
-import createChannel from "../../locators/createChannel.json";
-import home from "../../locators/home.json";
-import { deleteChannel } from "../../support/admin/channel";
-import { login } from "../../support/admin/login";
+import { test, expect } from "@playwright/test";
+import { login } from "../support/users/user";
+import home from "../locators/home.json";
+import createChannel from "../locators/createChannel.json";
+import { deleteChannel } from "../support/channels/channel";
 
 test.beforeEach(async ({ page }) => {
   await login(page);

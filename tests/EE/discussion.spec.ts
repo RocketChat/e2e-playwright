@@ -1,9 +1,9 @@
 import { test, expect, request } from '@playwright/test';
-import { login } from '../support/user';
-import home from '../../../locators/home.json';
-import createDiscussion from '../../../locators/createDiscussion.json';
-import { deleteDiscussion, deleteDiscussionAPI } from './support/discussion';
-import { createChannelAPI, deleteChannel } from '../channel/support/channel';
+import { login } from '../support/users/user';
+import home from '../locators/home.json';
+import createDiscussion from '../locators/createDiscussion.json';
+import { deleteDiscussion, deleteDiscussionAPI } from '../support/discussions/discussion';
+import { createChannelAPI, deleteChannel } from '../support/channels/channel';
 
 test.beforeEach(async ({ page, request }) => {
   await createChannelAPI(request, createDiscussion.names.channel); 

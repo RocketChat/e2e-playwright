@@ -1,14 +1,14 @@
 import { expect, test } from '@playwright/test';
+import fixtures from '../../../fixtures/fixtures.json';
+import locator from '../../../locators/marketplace.json';
 import { delay, fileUpload } from '../../../support/helpers';
-import { login } from '../../admin/support/user';
-import fixtures from './fixtures/fixtures.json';
-import locator from './locators/marketplace.json';
 import {
   goToMarketplace,
   installPrivateApp,
   searchAppPrivate,
   unistallApp,
-} from './support/marketplace';
+} from '../../../support/marketplace/marketplace';
+import { login } from '../../../support/users/user';
 test.describe('Private Apps', () => {
   test.beforeEach(async ({ page }) => {
     await login(page);

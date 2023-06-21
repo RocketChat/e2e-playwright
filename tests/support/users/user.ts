@@ -1,5 +1,5 @@
 import { Page } from '@playwright/test';
-import loginPage from '../../../locators/loginPage.json';
+import loginPage from '../../locators/loginPage.json';
 
 export async function login(page: Page) {
   await page.goto(`${process.env.URL}`);

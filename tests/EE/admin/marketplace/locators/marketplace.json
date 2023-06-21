@@ -29,6 +29,6 @@
     "menuSingleApp": "menu"
   },
   "class": {
-    "toast": ".rcx-toastbar-content"
+    "toast": "div[class='rcx-toastbar_content']"
   }
 }

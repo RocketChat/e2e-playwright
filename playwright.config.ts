@@ -11,6 +11,7 @@ export default defineConfig({
       {
         name: 'My Test Report',
         outputFile: './test-results/report.html',
+        trend: './test-results/report.json',
         visitor: (data, metadata, collect) => {
           const parserOptions = {
             sourceType: 'module',

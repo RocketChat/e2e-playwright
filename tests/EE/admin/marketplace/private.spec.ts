@@ -54,10 +54,11 @@ test.describe('Private Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.unistall).click();
     await page.getByRole('button', { name: locator.button.yes }).click();
-    page.waitForSelector(locator.class.toast);
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      'Data Loss Prevention uninstalled'
-    );
+    await expect(
+      page
+        .locator(locator.class.toast)
+        .filter({ hasText: 'Data Loss Prevention uninstalled' })
+    ).toBeVisible();
     await searchAppPrivate(page, locator.text.dataLoss);
     await expect(
       page.getByRole('link').filter({ hasText: locator.text.dataLoss })
@@ -75,9 +76,11 @@ test.describe('Private Apps', () => {
     await page.getByText(locator.text.unistall).click();
     await page.getByRole('button', { name: locator.button.yes }).click();
     page.waitForSelector(locator.class.toast);
-    await expect(page.locator(locator.class.toast)).toContainText(
-      'Facebook Messenger uninstalled'
-    );
+    await expect(
+      page
+        .locator(locator.class.toast)
+        .filter({ hasText: 'Facebook Messenger uninstalled' })
+    ).toBeVisible();
     await searchAppPrivate(page, locator.text.facebook);
     await expect(
       page.getByRole('link').filter({ hasText: locator.text.facebook })
@@ -95,10 +98,11 @@ test.describe('Private Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.disable).click();
     await page.getByRole('button', { name: locator.button.yes }).click();
-    page.waitForSelector(locator.class.toast);
-    await expect(page.locator(locator.class.toast)).toContainText(
-      'Facebook Messenger disabled'
-    );
+    await expect(
+      page
+        .locator(locator.class.toast)
+        .filter({ hasText: 'Facebook Messenger disabled' })
+    ).toBeVisible();
     await searchAppPrivate(page, locator.text.facebook);
     expect(
       await page
@@ -111,10 +115,11 @@ test.describe('Private Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.disable).click();
     await page.getByRole('button', { name: locator.button.yes }).click();
-    page.waitForSelector(locator.class.toast);
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      'Data Loss Prevention disabled'
-    );
+    await expect(
+      page
+        .locator(locator.class.toast)
+        .filter({ hasText: 'Data Loss Prevention disabled' })
+    ).toBeVisible();
     await searchAppPrivate(page, locator.text.dataLoss);
     expect(
       await page
@@ -126,10 +131,11 @@ test.describe('Private Apps', () => {
     await searchAppPrivate(page, locator.text.facebook);
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.enable).click();
-    page.waitForSelector(locator.class.toast);
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      'Facebook Messenger enabled'
-    );
+    await expect(
+      page
+        .locator(locator.class.toast)
+        .filter({ hasText: 'Facebook Messenger enabled' })
+    ).toBeVisible();
     await searchAppPrivate(page, locator.text.facebook);
     expect(
       await page
@@ -141,10 +147,11 @@ test.describe('Private Apps', () => {
     await searchAppPrivate(page, locator.text.dataLoss);
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.enable).click();
-    page.waitForSelector(locator.class.toast);
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      'Data Loss Prevention enabled'
-    );
+    await expect(
+      page
+        .locator(locator.class.toast)
+        .filter({ hasText: 'Data Loss Prevention enabled' })
+    ).toBeVisible();
     await searchAppPrivate(page, locator.text.dataLoss);
     expect(
       await page
@@ -166,10 +173,11 @@ test.describe('Private Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.disable).click();
     await page.getByRole('button', { name: locator.button.yes }).click();
-    page.waitForSelector(locator.class.toast);
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      'Facebook Messenger disabled'
-    );
+    await expect(
+      page
+        .locator(locator.class.toast)
+        .filter({ hasText: 'Facebook Messenger disabled' })
+    ).toBeVisible();
     await searchAppPrivate(page, locator.text.facebook);
     expect(
       await page
@@ -186,10 +194,11 @@ test.describe('Private Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.disable).click();
     await page.getByRole('button', { name: locator.button.yes }).click();
-    page.waitForSelector(locator.class.toast);
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      'Data Loss Prevention disabled'
-    );
+    await expect(
+      page
+        .locator(locator.class.toast)
+        .filter({ hasText: 'Data Loss Prevention disabled' })
+    ).toBeVisible();
     await searchAppPrivate(page, locator.text.dataLoss);
     expect(
       await page
@@ -205,10 +214,11 @@ test.describe('Private Apps', () => {
       .click();
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.enable).click();
-    page.waitForSelector(locator.class.toast);
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      'Facebook Messenger enabled'
-    );
+    await expect(
+      page
+        .locator(locator.class.toast)
+        .filter({ hasText: 'Facebook Messenger enabled' })
+    ).toBeVisible();
     await searchAppPrivate(page, locator.text.facebook);
     expect(
       await page
@@ -225,9 +235,11 @@ test.describe('Private Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.enable).click();
     page.waitForSelector(locator.class.toast);
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      'Data Loss Prevention enabled'
-    );
+    await expect(
+      page
+        .locator(locator.class.toast)
+        .filter({ hasText: 'Data Loss Prevention enabled' })
+    ).toBeVisible();
     await searchAppPrivate(page, locator.text.dataLoss);
     expect(
       await page

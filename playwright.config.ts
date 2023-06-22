@@ -11,6 +11,7 @@ export default defineConfig({
       {
         name: 'My Test Report',
         outputFile: './test-results/report.html',
+        trend: './test-results/report.json',
         visitor: (data, metadata, collect) => {
           const parserOptions = {
             sourceType: 'module',
@@ -84,7 +85,7 @@ export default defineConfig({
     screenshot: 'only-on-failure',
     video: 'on-first-retry',
     // All requests we send go to this API endpoint.
-    baseURL: process.env.CANDIDATE_EE,
+    baseURL: process.env.URL,
     extraHTTPHeaders: {
       // We set this header per GitHub guidelines.
       Accept: 'application/vnd.github.v3+json',

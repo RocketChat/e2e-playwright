@@ -13,6 +13,7 @@
     "channel": "Channel",
     "discussion": "Discussion",
     "logout": "Logout",
-    "home": "Home"
+    "home": "Home",
+    "workspace": "Workspace"
   }
 }

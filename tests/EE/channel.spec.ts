@@ -1,14 +1,14 @@
-import { test, expect } from "@playwright/test";
-import { login } from "../support/users/user";
-import home from "../locators/home.json";
-import createChannel from "../locators/createChannel.json";
-import { deleteChannel } from "../support/channels/channel";
+import { expect, test } from '@playwright/test';
+import createChannel from '../locators/createChannel.json';
+import home from '../locators/home.json';
+import { deleteChannel } from '../support/channels/channel';
+import { login } from '../support/login/login';
 
 test.beforeEach(async ({ page }) => {
   await login(page);
 });
 
-test("Create a Private Channel", async ({ page }) => {
+test('Create a Private Channel', async ({ page }) => {
   await page.locator(home.button.createNew).click();
   await page
     .getByTestId(home.dropdown.createNew)
@@ -17,16 +17,16 @@ test("Create a Private Channel", async ({ page }) => {
   await page
     .getByPlaceholder(createChannel.placeholder.channelName)
     .fill(createChannel.names.channel);
-  await page.getByRole("button", { name: createChannel.button.create }).click();
+  await page.getByRole('button', { name: createChannel.button.create }).click();
 
   expect(
     await page
-      .getByRole("link", { name: createChannel.names.channel })
+      .getByRole('link', { name: createChannel.names.channel })
       .isVisible()
   );
 });
 
-test("Create a Public Channel", async ({ page }) => {
+test('Create a Public Channel', async ({ page }) => {
   await page.locator(home.button.createNew).click();
   await page
     .getByTestId(home.dropdown.createNew)
@@ -36,11 +36,11 @@ test("Create a Public Channel", async ({ page }) => {
     .getByPlaceholder(createChannel.placeholder.channelName)
     .fill(createChannel.names.channel);
   await page.locator(createChannel.toggle.private).first().click();
-  await page.getByRole("button", { name: createChannel.button.create }).click();
+  await page.getByRole('button', { name: createChannel.button.create }).click();
 
   expect(
     await page
-      .getByRole("link", { name: createChannel.names.channel })
+      .getByRole('link', { name: createChannel.names.channel })
       .isVisible()
   );
 });

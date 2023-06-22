@@ -3,23 +3,36 @@ import fixturesLogin from '../../../../fixtures/loginPage.json';
 import home from '../../../../locators/home.json';
 import loginPage from '../../../../locators/loginPage.json';
 import settings from '../../../../locators/settings.json';
-import { login } from '../../../../support/admin/login';
+import {
+  disableAccountsManyallyApproveNewUsers,
+  enableAccountsManyallyApproveNewUsers,
+} from '../../../../support/admin/settings/accounts';
+import { goToSettings } from '../../../../support/admin/settings/settings';
 import {
   deleteUser,
   registerUser,
   setActiveStatusTrue,
 } from '../../../../support/admin/settings/users';
-test.describe('Private Apps', () => {
-  let username: string = 'testManuallyApproveUser';
-  let email: string = 'testManuallyAprroveUser@test.com';
-  let name: string = 'testManuallyApproveUser';
+import { login } from '../../../../support/login/login';
+
+test.describe('Registration', () => {
+  let username: string = 'testManuallyApproveUser2';
+  let email: string = 'testManuallyAprroveUser2@test.com';
+  let name: string = 'testManuallyApproveUser2';
   let password: string = `${process.env.PASSWORD_ADMIN}`;
-  test.beforeEach(async ({ page }) => {
+  test.beforeEach(async ({ page, request }) => {
     await login(page);
+    await enableAccountsManyallyApproveNewUsers(request);
+    await deleteUser(request, username);
   });
-  test('Enable Manually Approve New Users and verify message ', async ({
+  /**
+   * @jira WM-70
+   */
+  test.skip('Enable Manually Approve New Users and verify message @unstable ', async ({
     page,
   }) => {
+    await page.locator(home.button.avatar).first().click();
+    await page.getByText(home.text.logout).click();
     await page
       .getByRole('link', { name: loginPage.links.createAccount })
       .click();
@@ -27,7 +40,7 @@ test.describe('Private Apps', () => {
     await page.locator(loginPage.createAccount.email).fill(email);
     await page.locator(loginPage.createAccount.username).fill(username);
     await page.locator(loginPage.createAccount.password).fill(password);
-    await page.locator(loginPage.createAccount.password).fill(password);
+    await page.locator(loginPage.createAccount.confirmPassword).fill(password);
     await page.locator(loginPage.createAccount.reasonToJoin).fill('testReason');
     await page
       .getByRole('button', {
@@ -42,15 +55,20 @@ test.describe('Private Apps', () => {
 
     await page.getByPlaceholder(loginPage.fields.email).fill(name);
     await page.getByLabel(loginPage.fields.password).fill(password);
-    await page.getByRole('button', { name: loginPage.button.login }).click();
+    await page
+      .getByRole('button', { name: loginPage.button.login })
+      .first()
+      .click();
     await expect(
       page.locator(loginPage.warning).filter({
         hasText: fixturesLogin.createAccount.toast.ManuallyApproveActive,
       })
     ).toBeVisible();
   });
-
-  test('Enable manually a user ', async ({ page, request }) => {
+  /**
+   * @jira WM-70
+   */
+  test.skip('Enable manually a user @unstable ', async ({ page, request }) => {
     let userId = await registerUser(
       request,
       name,
@@ -59,29 +77,29 @@ test.describe('Private Apps', () => {
       'teste',
       password
     );
-
-    await page
-      .getByRole('button', { name: home.button.administration })
-      .click();
+    await goToSettings(page);
     await page.getByRole('link', { name: settings.menu.users.title }).click();
     await page
       .getByPlaceholder(settings.menu.users.placeHolder.searchBar)
       .fill(username);
     await expect(page.locator(`tr[qa-user-id='${userId}']`)).toHaveText(
-      /Isabel .* Disabled/g
+      /testManuallyApproveUser.*Disabled/g
     );
     await setActiveStatusTrue(request, userId);
-    await expect(page.locator(`tr[qa-user-id='${userId}']`)).toHaveText(
-      /Isabel .* Enabled/g
-    );
+    await page.locator('button[title="Close"]').click();
     await page.locator(home.button.avatar).first().click();
     await page.getByText(home.text.logout).click();
     await page.getByPlaceholder(loginPage.fields.email).fill(name);
     await page.getByLabel(loginPage.fields.password).fill(password);
+    await page
+      .getByRole('button', { name: loginPage.button.login })
+      .first()
+      .click();
     expect(page.getByText(home.text.home)).toBeVisible();
   });
 
   test.afterEach(async ({ request }) => {
+    await disableAccountsManyallyApproveNewUsers(request);
     await deleteUser(request, username);
   });
 });

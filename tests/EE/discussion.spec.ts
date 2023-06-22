@@ -1,16 +1,16 @@
-import { test, expect, request } from "@playwright/test";
-import { login } from "../support/users/user";
-import home from "../locators/home.json";
-import createDiscussion from "../locators/createDiscussion.json";
-import { deleteDiscussionAPI } from "../support/discussions/discussion";
-import { createChannelAPI, deleteChannel } from "../support/channels/channel";
+import { expect, test } from '@playwright/test';
+import createDiscussion from '../locators/createDiscussion.json';
+import home from '../locators/home.json';
+import { createChannelAPI, deleteChannel } from '../support/channels/channel';
+import { deleteDiscussionAPI } from '../support/discussions/discussion';
+import { login } from '../support/login/login';
 
 test.beforeEach(async ({ page, request }) => {
   await createChannelAPI(request, createDiscussion.names.channel);
   await login(page);
 });
 
-test("Create a discussion", async ({ page }) => {
+test('Create a discussion', async ({ page }) => {
   await page.locator(home.button.createNew).click();
   await page
     .getByTestId(home.dropdown.createNew)
@@ -20,20 +20,20 @@ test("Create a discussion", async ({ page }) => {
     .getByPlaceholder(createDiscussion.placeholder.selectChannel)
     .fill(createDiscussion.names.channel);
   await page
-    .getByRole("option", { name: createDiscussion.names.channel, exact: true })
-    .locator("div")
+    .getByRole('option', { name: createDiscussion.names.channel, exact: true })
+    .locator('div')
     .first()
     .click();
   await page
     .getByPlaceholder(createDiscussion.placeholder.nameDiscussion)
     .fill(createDiscussion.names.discussion);
   await page
-    .getByRole("button", { name: createDiscussion.button.create })
+    .getByRole('button', { name: createDiscussion.button.create })
     .click();
 
   expect(
     await page
-      .getByRole("link", { name: createDiscussion.names.discussion })
+      .getByRole('link', { name: createDiscussion.names.discussion })
       .isVisible()
   );
 });

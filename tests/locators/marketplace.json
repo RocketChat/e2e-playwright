@@ -3,6 +3,7 @@
     "privateApp": "Private Apps",
     "appInstalled": "Installed",
     "explore": "Explore",
+    "appLink": "div[role='link']",
     "apps": {
       "enterprise": {
         "bambooIntegration": "Bamboo Integration Enterprise",
@@ -39,7 +40,8 @@
     "browseFiles": "Browse Files",
     "install": "Install",
     "agree": "Agree",
-    "yes": "Yes"
+    "yes": "Yes",
+    "buy": "button[id=buy]"
   },
   "text": {
     "dataLoss": "Data Loss Prevention",
@@ -47,7 +49,8 @@
     "unistall": "Uninstall",
     "disable": "Disable",
     "enable": "Enable",
-    "install": "Install"
+    "install": "Install",
+    "confirmPurchase": "Confirm purchase"
   },
   "placeholder": {
     "searchInstalledApp": "Search installed apps",
@@ -59,5 +62,8 @@
   },
   "class": {
     "toast": "div[class='rcx-toastbar-inner'] > div"
+  },
+  "checkbox": {
+    "terms": "input[type='checkbox']"
   }
 }

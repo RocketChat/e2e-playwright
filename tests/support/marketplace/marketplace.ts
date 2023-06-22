@@ -1,7 +1,7 @@
 import { APIRequestContext, Page } from '@playwright/test';
 import home from '../../locators/home.json';
-import { delay, fileUpload } from '../helpers';
 import locator from '../../locators/marketplace.json';
+import { delay, fileUpload } from '../helpers';
 export async function searchAppInstalled(page: Page, appName: String) {
   await page.getByRole('link', { name: locator.link.appInstalled }).click();
   await page
@@ -116,4 +116,12 @@ export async function goToMarketplace(page: Page) {
     .getByTestId(home.dropdown.createNew)
     .getByText(home.text.marketplace)
     .click();
+}
+
+export async function confirmPurchase(page: Page) {
+  if ((await page.getByText(locator.text.confirmPurchase).count()) > 0) {
+    await page.locator(locator.checkbox.terms).check();
+    await page.locator(locator.button.buy).click();
+  }
+  await page.getByRole('button', { name: locator.button.agree }).click();
 }

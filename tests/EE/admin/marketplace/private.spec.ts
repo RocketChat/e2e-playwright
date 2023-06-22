@@ -1,5 +1,5 @@
 import { expect, test } from '@playwright/test';
-import fixtures from '../../../fixtures/marketplace.json';
+import fixtures from '../../../fixtures/marketplace/marketplace.json';
 import locator from '../../../locators/marketplace.json';
 import { delay, fileUpload } from '../../../support/helpers';
 import {

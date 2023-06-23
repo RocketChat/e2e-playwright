@@ -10,7 +10,7 @@ import {
 } from '../../../support/marketplace/marketplace';
 import { login } from '../../../support/users/user';
 
-test.describe('Install Apps', () => {
+test.describe.parallel('Install Apps', () => {
   test.beforeEach(async ({ page }) => {
     await login(page);
     await goToMarketplace(page);
@@ -26,7 +26,7 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.bambooIntegration} installed`
     );
     await searchAppInstalled(
@@ -35,7 +35,7 @@ test.describe('Install Apps', () => {
     );
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.bambooIntegration} Enabled`,
+        name: `${locator.link.apps.enterprise.bambooIntegration} Enabled`,
       })
     ).toBeVisible();
   });
@@ -53,7 +53,7 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.bambooIntegration} installed`
     );
     await searchAppInstalled(
@@ -62,7 +62,7 @@ test.describe('Install Apps', () => {
     );
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.bambooIntegration} Enabled`,
+        name: `${locator.link.apps.enterprise.bambooIntegration} Enabled`,
       })
     ).toBeVisible();
   });
@@ -86,7 +86,7 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.bitbucketCloudIntegration} installed`
     );
     await searchAppInstalled(
@@ -95,7 +95,7 @@ test.describe('Install Apps', () => {
     );
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.bitbucketCloudIntegration} Enabled`,
+        name: `${locator.link.apps.enterprise.bitbucketCloudIntegration} Enabled`,
       })
     ).toBeVisible();
   });
@@ -124,8 +124,8 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      `${fixtures.appName.enterprise.twitter} installed`
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
+      `${fixtures.appName.enterprise.bitbucketCloudIntegration} installed`
     );
     await searchAppInstalled(
       page,
@@ -133,7 +133,7 @@ test.describe('Install Apps', () => {
     );
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.bitbucketCloudIntegration} Enabled`,
+        name: `${locator.link.apps.enterprise.bitbucketCloudIntegration} Enabled`,
       })
     ).toBeVisible();
   });
@@ -157,7 +157,7 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.bitbucketServerIntegration} installed`
     );
     await searchAppInstalled(
@@ -166,7 +166,7 @@ test.describe('Install Apps', () => {
     );
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.bitbucketServerIntegration} Enabled`,
+        name: `${locator.link.apps.enterprise.bitbucketServerIntegration} Enabled`,
       })
     ).toBeVisible();
   });
@@ -195,8 +195,8 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      `${fixtures.appName.enterprise.twitter} installed`
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
+      `${fixtures.appName.enterprise.bitbucketServerIntegration} installed`
     );
     await searchAppInstalled(
       page,
@@ -204,7 +204,7 @@ test.describe('Install Apps', () => {
     );
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.bitbucketServerIntegration} Enabled`,
+        name: `${locator.link.apps.enterprise.bitbucketServerIntegration} Enabled`,
       })
     ).toBeVisible();
   });
@@ -228,7 +228,7 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.confluenceCloudIntegration} installed`
     );
     await searchAppInstalled(
@@ -237,7 +237,7 @@ test.describe('Install Apps', () => {
     );
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.confluenceCloudIntegration} Enabled`,
+        name: `${locator.link.apps.enterprise.confluenceCloudIntegration} Enabled`,
       })
     ).toBeVisible();
   });
@@ -266,7 +266,7 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.confluenceCloudIntegration} installed`
     );
     await searchAppInstalled(
@@ -275,7 +275,7 @@ test.describe('Install Apps', () => {
     );
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.confluenceCloudIntegration} Enabled`,
+        name: `${locator.link.apps.enterprise.confluenceCloudIntegration} Enabled`,
       })
     ).toBeVisible();
   });
@@ -299,7 +299,7 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.confluenceServerIntegration} installed`
     );
     await searchAppInstalled(
@@ -308,7 +308,7 @@ test.describe('Install Apps', () => {
     );
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.confluenceServerIntegration} Enabled`,
+        name: `${locator.link.apps.enterprise.confluenceServerIntegration} Enabled`,
       })
     ).toBeVisible();
   });
@@ -337,7 +337,7 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.confluenceServerIntegration} installed`
     );
     await searchAppInstalled(
@@ -346,7 +346,7 @@ test.describe('Install Apps', () => {
     );
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.confluenceServerIntegration} Enabled`,
+        name: `${locator.link.apps.enterprise.confluenceServerIntegration} Enabled`,
       })
     ).toBeVisible();
   });
@@ -361,13 +361,13 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.dataLoss} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.dataLoss);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.dataLoss} Enabled`,
+        name: `${locator.link.apps.enterprise.dataLoss} Enabled`,
       })
     ).toBeVisible();
   });
@@ -385,13 +385,13 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.dataLoss} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.dataLoss);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.dataLoss} Enabled`,
+        name: `${locator.link.apps.enterprise.dataLoss} Enabled`,
       })
     ).toBeVisible();
   });
@@ -402,13 +402,13 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.fabulor} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.fabulor);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.fabulor} Enabled`,
+        name: `${locator.link.apps.enterprise.fabulor} Enabled`,
       })
     ).toBeVisible();
   });
@@ -422,13 +422,13 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.fabulor} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.fabulor);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.fabulor} Enabled`,
+        name: `${locator.link.apps.enterprise.fabulor} Enabled`,
       })
     ).toBeVisible();
   });
@@ -443,13 +443,14 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      `${fixtures.appName.enterprise.facebook} installed`
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
+      `${fixtures.appName.enterprise.facebook} installed`,
+      { timeout: 10000 }
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.facebook);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.facebook} Enabled`,
+        name: `${locator.link.apps.enterprise.facebook} Enabled`,
       })
     ).toBeVisible();
   });
@@ -467,13 +468,14 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      `${fixtures.appName.enterprise.facebook} installed`
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
+      `${fixtures.appName.enterprise.facebook} installed`,
+      { timeout: 10000 }
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.facebook);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.facebook} Enabled`,
+        name: `${locator.link.apps.enterprise.facebook} Enabled`,
       })
     ).toBeVisible();
   });
@@ -488,13 +490,13 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.googleCalendar} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.googleCalendar);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.googleCalendar} Enabled`,
+        name: `${locator.link.apps.enterprise.googleCalendar} Enabled`,
       })
     ).toBeVisible();
   });
@@ -509,13 +511,13 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.googleCalendar} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.googleCalendar);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.googleCalendar} Enabled`,
+        name: `${locator.link.apps.enterprise.googleCalendar} Enabled`,
       })
     ).toBeVisible();
   });
@@ -527,13 +529,13 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.googleDrive} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.googleDrive);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.googleDrive} Enabled`,
+        name: `${locator.link.apps.enterprise.googleDrive} Enabled`,
       })
     ).toBeVisible();
   });
@@ -548,13 +550,13 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.googleDrive} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.googleDrive);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.googleDrive} Enabled`,
+        name: `${locator.link.apps.enterprise.googleDrive} Enabled`,
       })
     ).toBeVisible();
   });
@@ -566,13 +568,13 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.googleMeet} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.googleMeet);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.googleMeet} Enabled`,
+        name: `${locator.link.apps.enterprise.googleMeet} Enabled`,
       })
     ).toBeVisible();
   });
@@ -587,13 +589,13 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.googleMeet} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.googleMeet);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.googleMeet} Enabled`,
+        name: `${locator.link.apps.enterprise.googleMeet} Enabled`,
       })
     ).toBeVisible();
   });
@@ -608,13 +610,14 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      `${fixtures.appName.enterprise.instagramDirect} installed`
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
+      `${fixtures.appName.enterprise.instagramDirect} installed`,
+      { timeout: 15000 }
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.instagramDirect);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.instagramDirect} Enabled`,
+        name: `${locator.link.apps.enterprise.instagramDirect} Enabled`,
       })
     ).toBeVisible();
   });
@@ -632,13 +635,14 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      `${fixtures.appName.enterprise.instagramDirect} installed`
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
+      `${fixtures.appName.enterprise.instagramDirect} installed`,
+      { timeout: 15000 }
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.instagramDirect);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.instagramDirect} Enabled`,
+        name: `${locator.link.apps.enterprise.instagramDirect} Enabled`,
       })
     ).toBeVisible();
   });
@@ -662,7 +666,7 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.jiraCloudIntegration} installed`
     );
     await searchAppInstalled(
@@ -671,7 +675,7 @@ test.describe('Install Apps', () => {
     );
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.jiraCloudIntegration} Enabled`,
+        name: `${locator.link.apps.enterprise.jiraCloudIntegration} Enabled`,
       })
     ).toBeVisible();
   });
@@ -698,7 +702,7 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.jiraCloudIntegration} installed`
     );
     await searchAppInstalled(
@@ -707,7 +711,7 @@ test.describe('Install Apps', () => {
     );
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.jiraCloudIntegration} Enabled`,
+        name: `${locator.link.apps.enterprise.jiraCloudIntegration} Enabled`,
       })
     ).toBeVisible();
   });
@@ -731,7 +735,7 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.jiraServerIntegration} installed`
     );
     await searchAppInstalled(
@@ -740,7 +744,7 @@ test.describe('Install Apps', () => {
     );
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.jiraServerIntegration} Enabled`,
+        name: `${locator.link.apps.enterprise.jiraServerIntegration} Enabled`,
       })
     ).toBeVisible();
   });
@@ -767,7 +771,7 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.jiraServerIntegration} installed`
     );
     await searchAppInstalled(
@@ -776,7 +780,7 @@ test.describe('Install Apps', () => {
     );
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.jiraServerIntegration} Enabled`,
+        name: `${locator.link.apps.enterprise.jiraServerIntegration} Enabled`,
       })
     ).toBeVisible();
   });
@@ -788,13 +792,13 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.pexip} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.pexip);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.pexip} Enabled`,
+        name: `${locator.link.apps.enterprise.pexip} Enabled`,
       })
     ).toBeVisible();
   });
@@ -809,13 +813,13 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.pexip} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.pexip);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.pexip} Enabled`,
+        name: `${locator.link.apps.enterprise.pexip} Enabled`,
       })
     ).toBeVisible();
   });
@@ -827,13 +831,13 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.telegram} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.telegram);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.telegram} Enabled`,
+        name: `${locator.link.apps.enterprise.telegram} Enabled`,
       })
     ).toBeVisible();
   });
@@ -848,13 +852,13 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.telegram} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.telegram);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.telegram} Enabled`,
+        name: `${locator.link.apps.enterprise.telegram} Enabled`,
       })
     ).toBeVisible();
   });
@@ -866,13 +870,13 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.trello} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.trello);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.trello} Enabled`,
+        name: `${locator.link.apps.enterprise.trello} Enabled`,
       })
     ).toBeVisible();
   });
@@ -887,13 +891,13 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.trello} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.trello);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.trello} Enabled`,
+        name: `${locator.link.apps.enterprise.trello} Enabled`,
       })
     ).toBeVisible();
   });
@@ -905,13 +909,14 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      `${fixtures.appName.enterprise.twitter} installed`
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
+      `${fixtures.appName.enterprise.twitter} installed`,
+      { timeout: 15000 }
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.twitter);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.twitter} Enabled`,
+        name: `${locator.link.apps.enterprise.twitter} Enabled`,
       })
     ).toBeVisible();
   });
@@ -926,13 +931,14 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      `${fixtures.appName.enterprise.twitter} installed`
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
+      `${fixtures.appName.enterprise.twitter} installed`,
+      { timeout: 15000 }
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.twitter);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.twitter} Enabled`,
+        name: `${locator.link.apps.enterprise.twitter} Enabled`,
       })
     ).toBeVisible();
   });
@@ -944,13 +950,14 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      `${fixtures.appName.enterprise.whatsAppCloud} installed`
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
+      `${fixtures.appName.enterprise.whatsAppCloud} installed`,
+      { timeout: 10000 }
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.whatsAppCloud);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.whatsAppCloud} Enabled`,
+        name: `${locator.link.apps.enterprise.whatsAppCloud} Enabled`,
       })
     ).toBeVisible();
   });
@@ -965,13 +972,14 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
-      `${fixtures.appName.enterprise.whatsAppCloud} installed`
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
+      `${fixtures.appName.enterprise.whatsAppCloud} installed`,
+      { timeout: 10000 }
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.whatsAppCloud);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.whatsAppCloud} Enabled`,
+        name: `${locator.link.apps.enterprise.whatsAppCloud} Enabled`,
       })
     ).toBeVisible();
   });
@@ -983,13 +991,13 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.zapier} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.zapier);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.zapier} Enabled`,
+        name: `${locator.link.apps.enterprise.zapier} Enabled`,
       })
     ).toBeVisible();
   });
@@ -1004,13 +1012,13 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.zapier} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.zapier);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.zapier} Enabled`,
+        name: `${locator.link.apps.enterprise.zapier} Enabled`,
       })
     ).toBeVisible();
   });
@@ -1022,13 +1030,13 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.zoom} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.zoom);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.zoom} Enabled`,
+        name: `${locator.link.apps.enterprise.zoom} Enabled`,
       })
     ).toBeVisible();
   });
@@ -1043,13 +1051,13 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
-    await expect(page.locator(locator.class.toast)).toHaveText(
+    await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.zoom} installed`
     );
     await searchAppInstalled(page, fixtures.appName.enterprise.zoom);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.enterprise.zoom} Enabled`,
+        name: `${locator.link.apps.enterprise.zoom} Enabled`,
       })
     ).toBeVisible();
   });

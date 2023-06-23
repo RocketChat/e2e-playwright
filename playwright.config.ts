@@ -3,6 +3,7 @@ import { defineConfig, devices } from '@playwright/test';
 require('dotenv').config();
 
 export default defineConfig({
+  fullyParallel: true,
   globalSetup: require.resolve('./tests/global/global-setup.ts'),
   timeout: 80000,
   reporter: [
@@ -75,10 +76,9 @@ export default defineConfig({
   ],
 
   testDir: './tests',
-  fullyParallel: true,
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 2 : 0,
-  workers: process.env.CI ? 1 : undefined,
+  workers: process.env.CI ? 2 : undefined,
   use: {
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',

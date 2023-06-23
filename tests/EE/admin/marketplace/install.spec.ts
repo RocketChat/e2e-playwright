@@ -10,7 +10,7 @@ import {
 } from '../../../support/marketplace/marketplace';
 import { login } from '../../../support/users/user';
 
-test.describe.only('Install Apps', () => {
+test.describe('Install Apps', () => {
   test.beforeEach(async ({ page }) => {
     await login(page);
     await goToMarketplace(page);

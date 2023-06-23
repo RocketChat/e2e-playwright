@@ -24,7 +24,7 @@ export default defineConfig({
         },
         traceViewerUrl: 'https://trace.playwright.dev/?trace={traceUrl}',
         tags: {
-          smoke: {
+          unstable: {
             style: {
               background: '#6F9913',
             },
@@ -36,7 +36,7 @@ export default defineConfig({
             description:
               '"Sanity testing" is a kind of Software Testing performed after receiving a software build, with minor changes in code, or functionality, to ascertain that the bugs have been fixed and no further issues are introduced due to these changes.',
           },
-          critical: {
+          bug: {
             background: '#c00',
           },
           slow: 'background:orange;',

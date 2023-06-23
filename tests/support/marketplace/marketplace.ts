@@ -12,6 +12,7 @@ export async function searchAppInstalled(page: Page, appName: String) {
     await page
       .locator('div[role="link"]')
       .filter({ hasText: `${appName}` })
+      .first()
       .isVisible()
   ) {
     return true;
@@ -119,9 +120,15 @@ export async function goToMarketplace(page: Page) {
 }
 
 export async function confirmPurchase(page: Page) {
-  if ((await page.getByText(locator.text.confirmPurchase).count()) > 0) {
-    await page.locator(locator.checkbox.terms).check();
-    await page.locator(locator.button.buy).click();
+  await delay(3000);
+  if (
+    await page.frameLocator('iframe').getByText('Confirm purchase').isVisible()
+  ) {
+    await page.frameLocator('iframe').getByRole('checkbox').check();
+    await page
+      .frameLocator('iframe')
+      .getByRole('button', { name: 'Get' })
+      .click();
   }
   await page.getByRole('button', { name: locator.button.agree }).click();
 }

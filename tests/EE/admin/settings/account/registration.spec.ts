@@ -1,5 +1,6 @@
 import { expect, test } from '@playwright/test';
 import fixturesLogin from '../../../../fixtures/loginPage.json';
+import fixturesSettings from '../../../../fixtures/settings.json';
 import home from '../../../../locators/home.json';
 import loginPage from '../../../../locators/loginPage.json';
 import settings from '../../../../locators/settings.json';
@@ -16,9 +17,9 @@ import {
 import { login } from '../../../../support/login/login';
 
 test.describe('Registration', () => {
-  let username: string = 'testManuallyApproveUser2';
-  let email: string = 'testManuallyAprroveUser2@test.com';
-  let name: string = 'testManuallyApproveUser2';
+  let username: string = fixturesSettings.name;
+  let email: string = fixturesSettings.email;
+  let name: string = fixturesSettings.name;
   let password: string = `${process.env.PASSWORD_ADMIN}`;
   test.beforeEach(async ({ page, request }) => {
     await login(page);

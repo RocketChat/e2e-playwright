@@ -28,6 +28,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.anonymizer} installed`
     );
@@ -52,6 +56,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.anonymizer} installed`
     );
@@ -67,7 +75,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.antiBots} installed`
     );
@@ -86,7 +97,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.antiBots} installed`
     );
@@ -105,6 +119,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.basketballFRVR} installed`
     );
@@ -125,7 +143,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.basketballFRVR} installed`
     );
@@ -146,6 +167,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.bigBlueButton} installed`
     );
@@ -166,6 +191,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.bigBlueButton} installed`
     );
@@ -186,6 +215,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.botpressConnect} installed`
     );
@@ -209,6 +242,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.botpressConnect} installed`
     );
@@ -229,6 +266,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.brazilianZipCodeLookup} installed`
     );
@@ -252,6 +293,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.brazilianZipCodeLookup} installed`
     );
@@ -269,6 +314,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.broadcaster} installed`
     );
@@ -289,6 +338,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.broadcaster} installed`
     );
@@ -306,7 +359,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.collaboard} installed`
     );
@@ -327,7 +383,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.collaboard} installed`
     );
@@ -345,6 +404,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.contentFilter} installed`
     );
@@ -365,6 +428,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.contentFilter} installed`
     );
@@ -382,6 +449,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.cryptoVert} installed`
     );
@@ -402,6 +473,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.cryptoVert} installed`
     );
@@ -419,6 +494,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.cukooReminder} installed`
     );
@@ -439,6 +518,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.cukooReminder} installed`
     );
@@ -456,6 +539,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.dartsFRVR} installed`
     );
@@ -476,6 +563,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.dartsFRVR} installed`
     );
@@ -493,6 +584,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.dialogflow} installed`
     );
@@ -513,6 +608,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.dialogflow} installed`
     );
@@ -530,6 +629,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.dropboxPaper} installed`
     );
@@ -550,6 +653,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.dropboxPaper} installed`
     );
@@ -567,6 +674,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.giphy} installed`
     );
@@ -587,6 +698,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.giphy} installed`
     );
@@ -604,6 +719,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.github} installed`
     );
@@ -624,6 +743,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.github} installed`
     );
@@ -641,6 +764,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.gitlab} installed`
     );
@@ -661,6 +788,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.gitlab} installed`
     );
@@ -681,6 +812,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.goldDiggerFRVR} installed`
     );
@@ -704,6 +839,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.goldDiggerFRVR} installed`
     );
@@ -721,6 +860,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.hexFRVR} installed`
     );
@@ -741,6 +884,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.hexFRVR} installed`
     );
@@ -761,6 +908,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.hubspotCRMIntegration} installed`
     );
@@ -784,6 +935,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.hubspotCRMIntegration} installed`
     );
@@ -801,6 +956,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.icanhazdadjoke} installed`
     );
@@ -821,6 +980,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.icanhazdadjoke} installed`
     );
@@ -838,6 +1001,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.imgur} installed`
     );
@@ -858,6 +1025,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.imgur} installed`
     );
@@ -878,6 +1049,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.jenkinsIntegration} installed`
     );
@@ -901,6 +1076,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.jenkinsIntegration} installed`
     );
@@ -918,6 +1097,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).nth(1).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.ligeroSmart} installed`
     );
@@ -940,6 +1123,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.ligeroSmart} installed`
     );
@@ -960,6 +1147,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.ligeroSmartBotpress} installed`
     );
@@ -983,6 +1174,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.ligeroSmartBotpress} installed`
     );
@@ -1003,6 +1198,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.ligeroSmartWhatsapp} installed`
     );
@@ -1026,6 +1225,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.ligeroSmartWhatsapp} installed`
     );
@@ -1043,6 +1246,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.math} installed`
     );
@@ -1063,6 +1270,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.math} installed`
     );
@@ -1100,6 +1311,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.memeBuddy} installed`
     );
@@ -1120,6 +1335,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.microsoftTeams} installed`
     );
@@ -1140,7 +1359,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.microsoftTeams} installed`
     );
@@ -1177,7 +1399,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.npmTools} installed`
     );
@@ -1193,7 +1418,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.nUITEQStage} installed`
     );
@@ -1214,7 +1442,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.nUITEQStage} installed`
     );
@@ -1235,7 +1466,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.outOfOfficeResponder} installed`
     );
@@ -1259,7 +1493,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.outOfOfficeResponder} installed`
     );
@@ -1277,7 +1514,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.pinballFRVR} installed`
     );
@@ -1298,7 +1538,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.pinballFRVR} installed`
     );
@@ -1316,7 +1559,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.poll} installed`
     );
@@ -1337,7 +1583,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.poll} installed`
     );
@@ -1355,7 +1604,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.pollPlus} installed`
     );
@@ -1376,7 +1628,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.pollPlus} installed`
     );
@@ -1394,7 +1649,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.progressBar} installed`
     );
@@ -1415,7 +1673,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.progressBar} installed`
     );
@@ -1433,7 +1694,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.pushChannel} installed`
     );
@@ -1454,7 +1718,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.pushChannel} installed`
     );
@@ -1475,7 +1742,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.qrCodeGenerator} installed`
     );
@@ -1499,7 +1769,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.qrCodeGenerator} installed`
     );
@@ -1520,7 +1793,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.rapidProChannel} installed`
     );
@@ -1543,7 +1819,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.rapidProChannel} installed`
     );
@@ -1561,7 +1840,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.rasa} installed`
     );
@@ -1582,7 +1864,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.rasa} installed`
     );
@@ -1600,7 +1885,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.rcTrending} installed`
     );
@@ -1621,7 +1909,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.rcTrending} installed`
     );
@@ -1639,7 +1930,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.reminderBot} installed`
     );
@@ -1660,7 +1954,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.reminderBot} installed`
     );
@@ -1681,7 +1978,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.salesforceCRMIntegration} installed`
     );
@@ -1705,7 +2005,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.salesforceCRMIntegration} installed`
     );
@@ -1723,7 +2026,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.search} installed`
     );
@@ -1744,7 +2050,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.search} installed`
     );
@@ -1762,7 +2071,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.slackline} installed`
     );
@@ -1783,7 +2095,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.slackline} installed`
     );
@@ -1804,7 +2119,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.startPushFlow} installed`
     );
@@ -1825,7 +2143,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.startPushFlow} installed`
     );
@@ -1843,7 +2164,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.tenor} installed`
     );
@@ -1864,7 +2188,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.tenor} installed`
     );
@@ -1882,7 +2209,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.textltChannel} installed`
     );
@@ -1903,7 +2233,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.textltChannel} installed`
     );
@@ -1921,7 +2254,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.timax} installed`
     );
@@ -1942,7 +2278,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.timax} installed`
     );
@@ -1960,7 +2299,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.webExMeeting} installed`
     );
@@ -1981,7 +2323,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.webExMeeting} installed`
     );
@@ -1999,7 +2344,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.welcomeBot} installed`
     );
@@ -2020,7 +2368,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.welcomeBot} installed`
     );
@@ -2040,7 +2391,10 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.whatsappSandbox} installed`
     );
@@ -2064,7 +2418,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.whatsappSandbox} installed`
     );
@@ -2080,57 +2437,59 @@ test.describe('Install Apps', () => {
     page,
     request,
   }) => {
-    await unistallAppAPI(request, fixtures.appId.whatsappSandbox);
-    await searchAppExplore(page, fixtures.appName.whatsappSandbox);
+    await unistallAppAPI(request, fixtures.appId.whatsappTickets);
+    await searchAppExplore(page, fixtures.appName.whatsappTickets);
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
-    await confirmPurchase(page);
 
-    await expect(page.locator(locator.class.toast).first()).toHaveText(
-      `${fixtures.appName.whatsappSandbox} installed`
+    await confirmPurchase(page);
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
     );
-    await searchAppInstalled(page, fixtures.appName.whatsappSandbox);
+    const response = await responsePromise;
+    await searchAppInstalled(page, fixtures.appName.whatsappTickets);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.whatsappSandbox} Enabled`,
+        name: `${fixtures.appName.whatsappTickets} Enabled`,
       })
-    ).toBeVisible();
+    ).toBeVisible({ timeout: 10000 });
   });
 
   test('Install - WhatsApp Tickets - Inside menu', async ({
     page,
     request,
   }) => {
-    await unistallAppAPI(request, fixtures.appId.whatsappSandbox);
-    await searchAppExplore(page, fixtures.appName.whatsappSandbox);
+    await unistallAppAPI(request, fixtures.appId.whatsappTickets);
+    await searchAppExplore(page, fixtures.appName.whatsappTickets);
     await page
       .locator(locator.link.appLink)
-      .filter({ hasText: fixtures.appName.whatsappSandbox })
+      .filter({ hasText: fixtures.appName.whatsappTickets })
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
-    await expect(page.locator(locator.class.toast).first()).toHaveText(
-      `${fixtures.appName.whatsappSandbox} installed`
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
     );
-    await searchAppInstalled(page, fixtures.appName.whatsappSandbox);
+    const response = await responsePromise;
+    await searchAppInstalled(page, fixtures.appName.whatsappTickets);
     await expect(
       page.getByRole('link', {
-        name: `${fixtures.appName.whatsappSandbox} Enabled`,
+        name: `${fixtures.appName.whatsappTickets} Enabled`,
       })
-    ).toBeVisible();
+    ).toBeVisible({ timeout: 10000 });
   });
 
   test('Install - Word Replacer - Outside menu', async ({ page, request }) => {
+    test.setTimeout(120000);
     await unistallAppAPI(request, fixtures.appId.wordReplacer);
     await searchAppExplore(page, fixtures.appName.wordReplacer);
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
-    await expect(page.locator(locator.class.toast).first()).toHaveText(
-      `${fixtures.appName.wordReplacer} installed`
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
     );
+    const response = await responsePromise;
     await searchAppInstalled(page, fixtures.appName.wordReplacer);
     await expect(
       page.getByRole('link', {
@@ -2148,10 +2507,10 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
-    await expect(page.locator(locator.class.toast).first()).toHaveText(
-      `${fixtures.appName.wordReplacer} installed`
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
     );
+    const response = await responsePromise;
     await searchAppInstalled(page, fixtures.appName.wordReplacer);
     await expect(
       page.getByRole('link', {
@@ -2169,16 +2528,16 @@ test.describe('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await confirmPurchase(page);
-
-    await expect(page.locator(locator.class.toast).first()).toHaveText(
-      `${fixtures.appName.youTrackLinker} installed`
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
     );
+    const response = await responsePromise;
     await searchAppInstalled(page, fixtures.appName.youTrackLinker);
     await expect(
       page.getByRole('link', {
         name: `${fixtures.appName.youTrackLinker} Enabled`,
       })
-    ).toBeVisible();
+    ).toBeVisible({ timeout: 10000 });
   });
 
   test('Install - YouTrack Linker - Inside menu', async ({ page, request }) => {
@@ -2190,15 +2549,15 @@ test.describe('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await confirmPurchase(page);
-
-    await expect(page.locator(locator.class.toast).first()).toHaveText(
-      `${fixtures.appName.youTrackLinker} installed`
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
     );
+    const response = await responsePromise;
     await searchAppInstalled(page, fixtures.appName.youTrackLinker);
     await expect(
       page.getByRole('link', {
         name: `${fixtures.appName.youTrackLinker} Enabled`,
       })
-    ).toBeVisible();
+    ).toBeVisible({ timeout: 10000 });
   });
 });

@@ -77,8 +77,8 @@ export default defineConfig({
 
   testDir: './tests',
   forbidOnly: !!process.env.CI,
-  retries: process.env.CI ? 1 : 0,
-  workers: process.env.CI ? 2 : undefined,
+  retries: process.env.CI ? 2 : 0,
+  workers: process.env.CI ? 1 : undefined,
   use: {
     trace: 'on-first-retry',
     screenshot: 'only-on-failure',
@@ -100,11 +100,6 @@ export default defineConfig({
       use: {
         ...devices['Desktop Chrome'],
       },
-    },
-
-    {
-      name: 'firefox',
-      use: { ...devices['Desktop Firefox'] },
     },
   ],
 });

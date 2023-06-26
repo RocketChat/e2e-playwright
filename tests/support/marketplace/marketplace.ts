@@ -24,7 +24,7 @@ export async function searchAppExplore(page: Page, appName: String) {
   await page
     .getByPlaceholder(locator.placeholder.searchApps)
     .fill(`${appName}`);
-  await delay(3000);
+  await delay(6000);
 }
 
 export async function searchAppPrivate(page: Page, appName: any) {

@@ -26,6 +26,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.bambooIntegration} installed`
     );
@@ -53,6 +57,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.bambooIntegration} installed`
     );
@@ -86,6 +94,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.bitbucketCloudIntegration} installed`
     );
@@ -124,6 +136,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.bitbucketCloudIntegration} installed`
     );
@@ -157,6 +173,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.bitbucketServerIntegration} installed`
     );
@@ -195,6 +215,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.bitbucketServerIntegration} installed`
     );
@@ -228,6 +252,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.confluenceCloudIntegration} installed`
     );
@@ -266,6 +294,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.confluenceCloudIntegration} installed`
     );
@@ -299,6 +331,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.confluenceServerIntegration} installed`
     );
@@ -337,6 +373,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.confluenceServerIntegration} installed`
     );
@@ -361,6 +401,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.dataLoss} installed`
     );
@@ -385,6 +429,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.dataLoss} installed`
     );
@@ -402,6 +450,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.fabulor} installed`
     );
@@ -422,6 +474,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.fabulor} installed`
     );
@@ -443,6 +499,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.facebook} installed`,
       { timeout: 10000 }
@@ -468,6 +528,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.facebook} installed`,
       { timeout: 10000 }
@@ -490,6 +554,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.googleCalendar} installed`
     );
@@ -511,6 +579,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.googleCalendar} installed`
     );
@@ -529,6 +601,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.googleDrive} installed`
     );
@@ -550,6 +626,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.googleDrive} installed`
     );
@@ -568,6 +648,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.googleMeet} installed`
     );
@@ -589,6 +673,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.googleMeet} installed`
     );
@@ -610,6 +698,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.instagramDirect} installed`,
       { timeout: 15000 }
@@ -635,6 +727,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.instagramDirect} installed`,
       { timeout: 15000 }
@@ -666,6 +762,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.jiraCloudIntegration} installed`
     );
@@ -702,6 +802,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.jiraCloudIntegration} installed`
     );
@@ -735,6 +839,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.jiraServerIntegration} installed`
     );
@@ -771,6 +879,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.jiraServerIntegration} installed`
     );
@@ -792,6 +904,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.pexip} installed`
     );
@@ -813,6 +929,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.pexip} installed`
     );
@@ -831,6 +951,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.telegram} installed`
     );
@@ -852,6 +976,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.telegram} installed`
     );
@@ -870,6 +998,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.trello} installed`
     );
@@ -891,6 +1023,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.trello} installed`
     );
@@ -909,6 +1045,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.twitter} installed`,
       { timeout: 15000 }
@@ -931,6 +1071,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.twitter} installed`,
       { timeout: 15000 }
@@ -950,6 +1094,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.whatsAppCloud} installed`,
       { timeout: 10000 }
@@ -972,6 +1120,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.whatsAppCloud} installed`,
       { timeout: 10000 }
@@ -991,6 +1143,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.zapier} installed`
     );
@@ -1012,6 +1168,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.zapier} installed`
     );
@@ -1030,6 +1190,10 @@ test.describe.parallel('Install Apps', () => {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.install).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.zoom} installed`
     );
@@ -1051,6 +1215,10 @@ test.describe.parallel('Install Apps', () => {
       .click();
     await page.getByRole('button', { name: locator.button.install }).click();
     await page.getByRole('button', { name: locator.button.agree }).click();
+    const responsePromise = await page.waitForResponse(
+      `${process.env.URL}/api/apps/`
+    );
+    const response = await responsePromise;
     await expect(page.locator(locator.class.toast).first()).toHaveText(
       `${fixtures.appName.enterprise.zoom} installed`
     );

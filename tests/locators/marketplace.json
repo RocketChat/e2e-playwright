@@ -62,7 +62,7 @@
     "menuSingleApp": "menu"
   },
   "class": {
-    "toast": "div[class='rcx-toastbar-inner'] > div",
+    "toast": ".rcx-toastbar-content",
     "__toast__": ".rcx-toastbar_content"
   },
   "checkbox": {

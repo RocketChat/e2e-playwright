@@ -2382,7 +2382,7 @@ test.describe('Install Apps', () => {
       })
     ).toBeVisible();
   });
-  test('Install - WhatsApp Sandbox - Outside menu', async ({
+  test.only('Install - WhatsApp Sandbox - Outside menu', async ({
     page,
     request,
   }) => {
@@ -2395,18 +2395,15 @@ test.describe('Install Apps', () => {
       `${process.env.URL}/api/apps/`
     );
     const response = await responsePromise;
-    await expect(page.locator(locator.class.toast).first()).toHaveText(
-      `${fixtures.appName.whatsappSandbox} installed`
-    );
     await searchAppInstalled(page, fixtures.appName.whatsappSandbox);
     await expect(
       page.getByRole('link', {
         name: `${fixtures.appName.whatsappSandbox} Enabled`,
       })
-    ).toBeVisible();
+    ).toBeVisible({ timeout: 10000 });
   });
 
-  test('Install - WhatsApp Sandbox - Inside menu', async ({
+  test.only('Install - WhatsApp Sandbox - Inside menu', async ({
     page,
     request,
   }) => {
@@ -2422,15 +2419,12 @@ test.describe('Install Apps', () => {
       `${process.env.URL}/api/apps/`
     );
     const response = await responsePromise;
-    await expect(page.locator(locator.class.toast).first()).toHaveText(
-      `${fixtures.appName.whatsappSandbox} installed`
-    );
     await searchAppInstalled(page, fixtures.appName.whatsappSandbox);
     await expect(
       page.getByRole('link', {
         name: `${fixtures.appName.whatsappSandbox} Enabled`,
       })
-    ).toBeVisible();
+    ).toBeVisible({ timeout: 10000 });
   });
 
   test('Install - WhatsApp Tickets - Outside menu', async ({

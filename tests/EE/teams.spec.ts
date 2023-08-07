@@ -1,8 +1,8 @@
-import { test, expect } from '@playwright/test';
-import { login } from '../support/users/user';
-import { deleteTeam } from '../support/teams/team';
-import home from '../locators/home.json'
+import { expect, test } from '@playwright/test';
 import createTeam from '../locators/createTeam.json';
+import home from '../locators/home.json';
+import { login } from '../support/login/login';
+import { deleteTeam } from '../support/teams/team';
 test.describe('Create Teams', () => {
   test.beforeEach(async ({ page }) => {
     await login(page);

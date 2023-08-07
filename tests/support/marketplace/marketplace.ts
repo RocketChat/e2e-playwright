@@ -1,16 +1,17 @@
-import { APIRequestContext, Page } from '@playwright/test';
-import home from '../../locators/home.json';
-import { delay, fileUpload } from '../helpers';
-import locator from '../../locators/marketplace.json';
+import { APIRequestContext, Page } from "@playwright/test";
+import home from "../../locators/home.json";
+import locator from "../../locators/marketplace.json";
+import { delay, fileUpload } from "../helpers";
+
 export async function searchAppInstalled(page: Page, appName: String) {
-  await page.getByRole('link', { name: locator.link.appInstalled }).click();
+  await page.getByRole("link", { name: locator.link.appInstalled }).click();
   await page
     .getByPlaceholder(locator.placeholder.searchInstalledApp)
     .fill(`${appName}`);
   await delay(3000);
   if (
     await page
-      .getByRole('link')
+      .getByRole("link")
       .filter({ hasText: `${appName}` })
       .isVisible()
   ) {
@@ -19,14 +20,14 @@ export async function searchAppInstalled(page: Page, appName: String) {
 }
 
 export async function searchAppPrivate(page: Page, appName: any) {
-  await page.getByRole('link', { name: locator.link.privateApp }).click();
+  await page.getByRole("link", { name: locator.link.privateApp }).click();
   await page
     .getByPlaceholder(locator.placeholder.searchPrivateApp)
     .fill(`${appName}`);
   await delay(3000);
   if (
     await page
-      .getByRole('link')
+      .getByRole("link")
       .filter({ hasText: `${appName}` })
       .isVisible()
   ) {
@@ -37,8 +38,8 @@ export async function searchAppPrivate(page: Page, appName: any) {
 export async function unistallAppAPI(request: APIRequestContext, app: string) {
   await request.delete(`/api/apps/${app}`, {
     headers: {
-      'X-Auth-Token': `${process.env.API_TOKEN}`,
-      'X-User-Id': `${process.env.USERID}`,
+      "X-Auth-Token": `${process.env.API_TOKEN}`,
+      "X-User-Id": `${process.env.USERID}`,
     },
   });
 }
@@ -47,13 +48,13 @@ export async function unistallApp(page: Page, appName: String) {
   if (appisntalledPrivate) {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.unistall).click();
-    await page.getByRole('button', { name: locator.button.yes }).click();
+    await page.getByRole("button", { name: locator.button.yes }).click();
   }
   let appinstalled = await searchAppInstalled(page, appName);
   if (appinstalled) {
     await page.getByTestId(locator.testId.menuSingleApp).click();
     await page.getByText(locator.text.unistall).click();
-    await page.getByRole('button', { name: locator.button.yes }).click();
+    await page.getByRole("button", { name: locator.button.yes }).click();
   }
 }
 export async function installPrivateApp(
@@ -62,17 +63,17 @@ export async function installPrivateApp(
   appPath: string
 ) {
   await unistallApp(page, appName);
-  await page.getByRole('link', { name: locator.link.privateApp }).click();
+  await page.getByRole("link", { name: locator.link.privateApp }).click();
   await page
-    .getByRole('button', { name: locator.button.uploadPrivateApp })
+    .getByRole("button", { name: locator.button.uploadPrivateApp })
     .click();
   await fileUpload(locator.button.browseFiles, appPath, page);
-  await page.getByRole('button', { name: locator.button.install }).click();
-  await page.getByRole('button', { name: locator.button.agree }).click();
+  await page.getByRole("button", { name: locator.button.install }).click();
+  await page.getByRole("button", { name: locator.button.agree }).click();
 }
 
 export async function goToMarketplace(page: Page) {
-  await page.getByRole('button', { name: home.button.administration }).click();
+  await page.getByRole("button", { name: home.button.administration }).click();
   await page
     .getByTestId(home.dropdown.createNew)
     .getByText(home.text.marketplace)

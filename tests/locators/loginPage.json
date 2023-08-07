@@ -5,5 +5,21 @@
   },
   "button": {
     "login": "Login"
-  }
+  },
+  "links": {
+    "createAccount": "Create an account"
+  },
+  "createAccount": {
+    "name": "input[id='name']",
+    "email": "input[id='email']",
+    "username": "input[id='username']",
+    "password": "input[id='password']",
+    "confirmPassword": "input[id='passwordConfirmation']",
+    "reasonToJoin": "textarea[id='reason']",
+    "button": {
+      "joinYourTeam": "Join your team"
+    },
+    "toast": "div[class='rcx-toastbar_content']"
+  },
+  "warning": "div[class='rcx-box rcx-box--full rcx-callout__children']"
 }

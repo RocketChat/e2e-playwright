@@ -2,13 +2,13 @@ import { expect, test } from '@playwright/test';
 import fixtures from '../../../fixtures/marketplace.json';
 import locator from '../../../locators/marketplace.json';
 import { delay, fileUpload } from '../../../support/helpers';
+import { login } from '../../../support/login/login';
 import {
   goToMarketplace,
   installPrivateApp,
   searchAppPrivate,
   unistallApp,
 } from '../../../support/marketplace/marketplace';
-import { login } from '../../../support/users/user';
 test.describe('Private Apps', () => {
   test.beforeEach(async ({ page }) => {
     await login(page);
@@ -16,7 +16,7 @@ test.describe('Private Apps', () => {
   });
 
   test('Upload two Private App', async ({ page }) => {
-    await unistallApp(page, locator.text.dataLoss);
+    await await unistallApp(page, locator.text.dataLoss);
     await unistallApp(page, locator.text.facebook);
     await page.getByRole('link', { name: locator.link.privateApp }).click();
     await page

@@ -1,0 +1,7 @@
+{
+  "createAccount": {
+    "toast": {
+      "ManuallyApproveActive": "Before you can login, your account must be manually activated by an administrator."
+    }
+  }
+}
